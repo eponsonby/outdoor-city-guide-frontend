@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.nav a {
+  float: left;
+  color: #3C5466;
+  text-align: center;
+  padding: 14px, 16px;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Red Hat Text', sans-serif;
+  padding-right: 10px;
+}
+
+.nav {
+  float: right
+}
