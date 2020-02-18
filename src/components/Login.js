@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { updateLoginForm } from '../actions/loginForm'
 import { connect } from 'react-redux'
+import { login } from '../actions/currentUser'
 
 class Login extends Component {
     state = {
@@ -21,7 +21,8 @@ class Login extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault()
-        this.props.setCurrentUser(this.state.username, this.state.password)
+        login(this.state)
+        // this.props.setCurrentUser(this.state.username, this.state.password)
         this.setState({
             username: "",
             password: ""
