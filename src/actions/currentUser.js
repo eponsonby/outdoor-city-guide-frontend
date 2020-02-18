@@ -8,7 +8,9 @@ export const setCurrentUser = user => {
 
 // async action creators
 export const login = credentials => {
+    console.log("in login")
     return dispatch => {
+        console.log("in dispatch")
         return fetch('http://localhost:3001/api/v1/login', {
             credentials: "include",
             method: "POST",

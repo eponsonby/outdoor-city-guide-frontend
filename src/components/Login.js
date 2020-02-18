@@ -21,7 +21,7 @@ class Login extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault()
-        login(this.state)
+        this.props.login(this.state)
         // this.props.setCurrentUser(this.state.username, this.state.password)
         this.setState({
             username: "",
@@ -62,10 +62,13 @@ class Login extends Component {
                         type: 'SET_CURRENT_USER',
                         user: user
                     })
-                }
+                },
+                
+                login: (params) => dispatch(login(params))
             }
 
         )
     }
+
 
 export default connect (null, mapDispatchToProps)(Login)
