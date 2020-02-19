@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { logout } from '../actions/currentUser'
 
 class Logout extends Component {
-
+// make this a link instead of a button
     render() {
         return (
             <form onSubmit={(event) => {
