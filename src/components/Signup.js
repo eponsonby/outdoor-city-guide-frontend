@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { signup } from '../actions/currentUser'
 
 class Signup extends Component {
     state = {
@@ -25,8 +26,7 @@ class Signup extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault()
-        // this.props.signup(this.state)
-        // this.props.setCurrentUser(this.state.username, this.state.password)
+        this.props.signup(this.state)
         this.setState({
             username: "",
             password: ""
@@ -66,13 +66,13 @@ class Signup extends Component {
     }
 }
 
-    // const mapDispatchToProps = (dispatch) => {
-    //     return (
-    //         {   
-    //             signup: (params) => dispatch(signup(params))
-    //         }
-    //     )
-    // }
+    const mapDispatchToProps = (dispatch) => {
+        return (
+            {   
+                signup: (params) => dispatch(signup(params))
+            }
+        )
+    }
 
 
-export default Signup
+export default connect(null, mapDispatchToProps)(Signup)
