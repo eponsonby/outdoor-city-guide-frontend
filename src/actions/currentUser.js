@@ -1,3 +1,5 @@
+import { getCities } from "./cities"
+
 // synchronous action creators
 export const setCurrentUser = user => {
     return {
@@ -60,6 +62,7 @@ export const getCurrentUser = () => {
                 alert(response.error)
             } else {
                 dispatch(setCurrentUser(response.data))
+                dispatch(getCities())
             }
         })
         .catch(console.log)
