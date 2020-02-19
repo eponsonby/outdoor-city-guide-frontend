@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { login } from '../actions/currentUser'
 
-class Login extends Component {
+class Signup extends Component {
     state = {
+        name: "",
         username: "",
         password: ""
     }
 
     handleOnChange = event => {
-        if (event.target.name === "username")
+        if (event.target.name === "name")
             this.setState({
-                username: event.target.value,
+                name: event.target.value,
+            })
+        else if (event.target.name === "username")
+            this.setState({
+                username: event.target.value
             })
         else if (event.target.name === "password")
             this.setState({
@@ -21,7 +25,8 @@ class Login extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault()
-        this.props.login(this.state)
+        // this.props.signup(this.state)
+        // this.props.setCurrentUser(this.state.username, this.state.password)
         this.setState({
             username: "",
             password: ""
@@ -31,6 +36,14 @@ class Login extends Component {
     render() {
         return (
             <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                <input
+                placeholder="name"
+                value={this.state.name}
+                name="name"
+                type="text"
+                onChange={(event) => this.handleOnChange(event)}
+                />
+                
                 <input
                 placeholder="username"
                 value={this.state.username}
@@ -47,27 +60,19 @@ class Login extends Component {
                 onChange={(event) => this.handleOnChange(event)}
                 />
 
-                <input type="submit" value="Log In"/>
+                <input type="submit" value="Sign Up"/>
             </form>
         )
     }
 }
 
-    const mapDispatchToProps = (dispatch) => {
-        return (
-            {
-                setCurrentUser: (user) => {
-                    dispatch({
-                        type: 'SET_CURRENT_USER',
-                        user: user
-                    })
-                },
-                
-                login: (params) => dispatch(login(params))
-            }
-
-        )
-    }
+    // const mapDispatchToProps = (dispatch) => {
+    //     return (
+    //         {   
+    //             signup: (params) => dispatch(signup(params))
+    //         }
+    //     )
+    // }
 
 
-export default connect (null, mapDispatchToProps)(Login)
+export default Signup

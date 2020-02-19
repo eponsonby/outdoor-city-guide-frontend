@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Login from './Login'
-import Logout from './Logout'
+// import Login from './Login'
+// import Logout from './Logout'
 
 class Navbar extends Component {
 
     render() {
         return (
             <div className="nav">
-                {this.props.currentUser ? <Logout/> : <Login/>}
+                <button> Log In </button>
+                <button> Sign Up </button>
+                {/* {this.props.currentUser ? <Logout/> : <Login/>} */}
             </div>
         )
     }
