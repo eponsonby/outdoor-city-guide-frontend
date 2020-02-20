@@ -1,12 +1,12 @@
-import React from 'react'
-import Cities from './Cities.js'
+// import React from 'react'
+// import Cities from './Cities.js'
 
-const MainContainer = () => {
-  return (
-    <div className="MainContainer">
-      <Cities/>
-    </div>
-  )
-}
+// const MainContainer = () => {
+//   return (
+//     <div className="MainContainer">
+//       <Cities/>
+//     </div>
+//   )
+// }
 
-export default MainContainer
+// export default MainContainer

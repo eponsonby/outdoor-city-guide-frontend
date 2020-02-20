@@ -71,4 +71,4 @@ class Login extends Component {
     }
 
 
-export default connect (null, mapDispatchToProps)(Login)
+export default connect(null, mapDispatchToProps)(Login)

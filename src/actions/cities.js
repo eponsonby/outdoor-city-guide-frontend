@@ -5,6 +5,13 @@ export const setCities = cities => {
     }
 }
 
+export const clearCities = () => {
+    return {
+        type: "CLEAR_CITIES",
+        
+    }
+}
+
 export const getCities = () => {
     return dispatch => {
       return fetch("http://localhost:3001/api/v1/cities", {

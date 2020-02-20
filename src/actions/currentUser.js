@@ -1,4 +1,4 @@
-import { getCities } from "./cities"
+import { getCities, clearCities } from "./cities"
 
 // synchronous action creators
 export const setCurrentUser = user => {
@@ -31,7 +31,8 @@ export const login = (credentials, history) => {
                 alert(user.error)
             } else {
                 dispatch(setCurrentUser(user.data))
-                history.push('/')
+                dispatch(getCities())
+                history.push('/cities')
             }
         })
         .catch(console.log)
@@ -57,6 +58,7 @@ export const signup = (credentials, history) => {
                 alert(user.error)
             } else {
                 dispatch(setCurrentUser(user.data))
+                dispatch(getCities())
                 history.push('/')
             }
         })
@@ -66,14 +68,15 @@ export const signup = (credentials, history) => {
 
 
 
-
 export const logout = () => {
     return dispatch => {
         dispatch(clearCurrentUser())
+        dispatch(clearCities())
         return fetch('http://localhost:3001/api/v1/logout', {
             credentials: "include",
             method: "DELETE",
         })
+
     }
 }
 

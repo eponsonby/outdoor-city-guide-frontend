@@ -5,6 +5,7 @@ const CityCard = ({ city }) => {
   return (
     city ?
       <div>
+          <h1>Inside City Card</h1>
         <h3>{city.attributes.name}</h3>
         {/* <h3>{city.attributes.state} </h3>
         {city.attributes.parks.map(park => (<p>{park.name}</p>))}

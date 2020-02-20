@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { logout } from '../actions/currentUser'
+import { withRouter } from 'react-router-dom'
 
 class Logout extends Component {
 // make this a link instead of a button
@@ -9,6 +10,7 @@ class Logout extends Component {
             <form onSubmit={(event) => {
                     event.preventDefault()
                     this.props.logout()
+                    this.props.history.push('/')
                 }
             }>
                 <input type="submit" value="Log Out"/>
@@ -24,4 +26,4 @@ class Logout extends Component {
     }
 
 
-export default connect (null, mapDispatchToProps)(Logout)
+export default withRouter(connect(null, mapDispatchToProps)(Logout))

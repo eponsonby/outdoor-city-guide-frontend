@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Logout from './Logout'
 
 class Navbar extends Component {
@@ -8,8 +8,7 @@ class Navbar extends Component {
     render() {
         return (
             <div className="nav">
-                <NavLink exact activeClassName to="/cities">Cities</NavLink>
-                <NavLink exact activeClassName to="/">Home</NavLink>
+                <Link exact activeClassName="active" to="/cities">Home</Link>
                 { this.props.loggedIn ? <Logout/> : null }
             </div>
         )
