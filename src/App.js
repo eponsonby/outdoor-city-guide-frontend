@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-// import Navbar from './components/Navbar'
+import Navbar from './components/Navbar'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import Login from './components/Login'
-import Logout from './components/Logout'
+// import Logout from './components/Logout'
 import Signup from './components/Signup'
 import Cities from './components/Cities'
 import Home from './components/Home'
@@ -20,7 +20,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        { loggedIn ? <Logout/> : null }
+        {loggedIn ? <Navbar/> : null }
           <Switch>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/signup' render={(props) => <Signup history={props.history}/>}/>
