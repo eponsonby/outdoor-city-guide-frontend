@@ -21,7 +21,8 @@ class Login extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault()
-        this.props.login(this.state)
+        console.log(this.props.login)
+        this.props.login(this.state, this.props.history)
         this.setState({
             username: "",
             password: ""
@@ -63,7 +64,7 @@ class Login extends Component {
                     })
                 },
                 
-                login: (params) => dispatch(login(params))
+                login: (credentials, history) => dispatch(login(credentials, history))
             }
 
         )
