@@ -8,7 +8,7 @@ class Navbar extends Component {
     render() {
         return (
             <div className="nav">
-                <Link exact activeClassName="active" to="/cities">Home</Link>
+                <Link to="/cities">Home</Link>
                 { this.props.loggedIn ? <Logout/> : null }
             </div>
         )

@@ -21,7 +21,6 @@ class Login extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault()
-        console.log(this.props.login)
         this.props.login(this.state, this.props.history)
         this.setState({
             username: "",

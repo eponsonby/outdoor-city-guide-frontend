@@ -8,12 +8,17 @@ export const setCities = cities => {
 export const clearCities = () => {
     return {
         type: "CLEAR_CITIES",
-        
+
     }
 }
 
+export const loadingCities = () => ({
+        type: "LOADING_CITIES"
+})
+
 export const getCities = () => {
     return dispatch => {
+        dispatch(loadingCities())
       return fetch("http://localhost:3001/api/v1/cities", {
         credentials: "include",
         method: "GET",

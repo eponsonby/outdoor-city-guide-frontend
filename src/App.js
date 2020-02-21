@@ -8,6 +8,7 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Cities from './components/Cities'
 import Home from './components/Home'
+import CityCard from './components/CityCard'
 import { Route, Switch, withRouter} from 'react-router-dom'
 
 class App extends React.Component {
@@ -17,7 +18,11 @@ class App extends React.Component {
 
   render() {
     const loggedIn = this.props.loggedIn
-
+    // const city = this.props.cities.length > 0 ? this.props.cities.find(city => city.id === ) : null 
+     // const city = this.props.cities.find(city => city.id)
+    // console.log("city", city)
+      // === props.match.params.id)
+    // console.log(city)
     return (
       <div className="App">
         {loggedIn ? <Navbar/> : <Home/> }
@@ -25,6 +30,11 @@ class App extends React.Component {
             <Route exact path='/cities' component={Cities}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/signup' render={(props) => <Signup history={props.history}/>}/>
+            <Route exact path='/cities/:id' render={props => {
+              const city = this.props.cities.data.length > 0 ? this.props.cities.data.find(city => city.id === props.match.params.id) : null
+              return city !== null ? <CityCard city={city}/> : <p>Error</p>
+            }
+          }/>
           </Switch>
       </div>
       
@@ -34,7 +44,8 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return  ({
-    loggedIn: !!state.currentUser
+    loggedIn: !!state.currentUser,
+    cities: state.cities
   })
 }
 
