@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
 import Navbar from './components/Navbar'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
@@ -24,7 +24,7 @@ class App extends React.Component {
       // === props.match.params.id)
     // console.log(city)
     return (
-      <div className="App">
+      <div className="container">
         {loggedIn ? <Navbar/> : <Home/> }
           <Switch>
             <Route exact path='/cities' component={Cities}/>

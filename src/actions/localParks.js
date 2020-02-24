@@ -1,7 +1,7 @@
-export const setlocalParks = parks => {
+export const setLocalParks = localParks => {
     return {
         type: "SET_LOCAL_PARKS",
-        parks: parks
+        localParks: localParks
     }
 }
 
@@ -9,11 +9,18 @@ export const setlocalParks = parks => {
   export const getLocalParks = () => {
     return async dispatch => {
         try {
-            const res = await fetch('https://developer.nps.gov/api/v1/parks?parkCode=olym%2Cmora%2Cnoca%2Cromo%2Cyose%2Ccrla%2Cgrsm&api_key=ep5maXgiUeXGQzcXUpGOJwpQ3KveBes6YTvCBImm')
+            const res = await fetch('https://ridb.recreation.gov/api/v1/recareas?state=NV', {
+                method: 'GET',
+                headers: {
+                    accept: 'application/json',
+                    apikey: '89b576ed-004b-485c-adf9-f90fe2006284' 
+                } 
+            })
             if (!res.ok) {
                 throw res
             }
             const parkData = await res.json()
+            console.log(parkData)
             const parkList = parkData.data
             dispatch(setLocalParks(parkList))
         } catch (err) {
