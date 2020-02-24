@@ -11,7 +11,7 @@ class CityCard extends React.Component {
 
     componentDidMount() {
         this.props.getNationalParks()
-        this.props.getLocalParks()
+        this.props.getLocalParks(this.props.city.attributes.name)
     }
 
     getNatParkInfo = () => {
@@ -80,9 +80,9 @@ const mapDispatchToProps = (dispatch) => {
             getNationalParks: () => {
                 dispatch(getNationalParks())
             },
-            getLocalParks: () => {
-                dispatch(getLocalParks())
-            },
+            getLocalParks: (city) => {
+                dispatch(getLocalParks(city))
+            }
         }
     )
 }

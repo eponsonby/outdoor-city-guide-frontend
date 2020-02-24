@@ -9,7 +9,7 @@ export const setNationalParks = parks => {
   export const getNationalParks = () => {
     return async dispatch => {
         try {
-            const res = await fetch('https://developer.nps.gov/api/v1/parks?parkCode=olym%2Cmora%2Cnoca%2Cromo%2Cyose%2Ccrla%2Cgrsm&api_key=ep5maXgiUeXGQzcXUpGOJwpQ3KveBes6YTvCBImm')
+            const res = await fetch('http://localhost:3001/api/v1/get_parks')
             if (!res.ok) {
                 throw res
             }
