@@ -27,9 +27,8 @@ class CityCard extends React.Component {
 
     getClimbingGymInfo = () => {
         const climbingGymsFromState = this.props.city.attributes.climbing_gyms
-        console.log(climbingGymsFromState)
-        const climbingGymName = climbingGymsFromState.map(cg => <div><p>{cg.name}</p><p>{cg.street}</p><p>{cg.city.name}, {cg.state}</p><p>{cg.zip}</p></div>)
-        return climbingGymName
+        const climbingGymText = climbingGymsFromState.map(cg => <div><p>{cg.name}</p><p>{cg.street}</p><p>{cg.city.name}, {cg.state}</p><p>{cg.zip}</p></div>)
+        return climbingGymText
     }
 
     render() {
