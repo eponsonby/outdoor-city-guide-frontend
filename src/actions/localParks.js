@@ -34,37 +34,39 @@ const getUrls = (data) => {
     for (let element of data) {
         if (element.type === "facilities") {
                 for (let ids of element.ids)
-                 urlsArray.push(`http://localhost:3001/api/v1/get_local_parks/?type=facilities?id=${ids}`)
+                 urlsArray.push(`http://localhost:3001/api/v1/get_local_parks/?type=facilities&id=${ids}`)
         }
         
         if (element.type === "recareas") {
             for (let ids of element.ids)
-                urlsArray.push(`http://localhost:3001/api/v1/get_local_parks/?type=recareas?id=${ids}`)
+                urlsArray.push(`http://localhost:3001/api/v1/get_local_parks/?type=recareas&id=${ids}`)
             }   
     }
     return urlsArray
 }
 
-// const getIds = (data) => {
-//     for (let element of data) {
-
-//     }
-
   export const getLocalParks = (city) => {
       const parkData = getParkTypeAndIds(city)
-      console.log(getUrls(parkData))
+      const urls = getUrls(parkData)
 
     return async dispatch => {
-        try {
-            const res = await fetch('http://localhost:3001/api/v1/get_local_parks/?id=1106')
-            if (!res.ok) {
-                throw res
-            }
-            const parkData = await res.json()
+            let parkData = await Promise.all (
+                urls.map(async url => {
+                    let response = await fetch(url)
+                    return response.json()
+                })
+            )
             dispatch(setLocalParks(parkData))
-        } catch (err) {
-            alert("Failed to load local parks")
-        }
+        //     const res = await fetch('http://localhost:3001/api/v1/get_local_parks/?id=1106')
+
+        //     if (!res.ok) {
+        //         throw res
+        //     }
+        //     const parkData = await res.json()
+        //     dispatch(setLocalParks(parkData))
+        // } catch (err) {
+        //     alert("Failed to load local parks")
+        // }
     }
     
 }

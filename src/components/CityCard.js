@@ -18,12 +18,23 @@ class CityCard extends React.Component {
         const selectedParks = this.props.parks.length > 0 ? this.props.parks.filter(park => park.states === this.props.city.attributes.state) : "nothing"
         if (selectedParks !== "nothing") {
             const desiredContent = selectedParks.map(park => ({description: park.description, name: park.fullName, url: park.url}))
-            return desiredContent.map(park => <div><h1>{park.name}</h1> <p>{park.description}</p></div>)
+            return desiredContent.map(park => <div><h3>{park.name}</h3> <p>{park.description}</p></div>)
         } else {
             return null
         }
-
     }
+    
+    getLocalParkInfo = () => {
+        const selectedLocalParks = this.props.localParks.length > 0 ? this.props.localParks : null
+        if (selectedLocalParks !== null) {
+            console.log(selectedLocalParks)
+            const mappedParks = selectedLocalParks.map(park => <div><h3>{park.RecAreaName}</h3><h3>{park.FacilityName}</h3><p>{park.RecAreaDescription}</p><p>{park.FacilityDescription}</p></div>)
+            return mappedParks
+        } else {
+            return null
+        }
+    }
+
 
     getClimbingGymInfo = () => {
         const climbingGymsFromState = this.props.city.attributes.climbing_gyms
@@ -40,6 +51,7 @@ class CityCard extends React.Component {
                     <div className="col-md-6">
                         <h3>Nearby Parks and Recreation Areas</h3>
                         {this.getNatParkInfo()}
+                        {this.getLocalParkInfo()}
                     </div>
                     <div className="col-md-3">
                         <h3>Activities Loved By Locals</h3>
@@ -69,8 +81,8 @@ class CityCard extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        parks: state.parks
-        // localParks: state.localParks
+        parks: state.parks,
+        localParks: state.localParks
     }
 }
 
