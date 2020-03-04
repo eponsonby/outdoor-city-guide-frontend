@@ -26,9 +26,9 @@ class CityCard extends React.Component {
     
     getLocalParkInfo = () => {
         const selectedLocalParks = this.props.localParks.length > 0 ? this.props.localParks : null
+        
         if (selectedLocalParks !== null) {
-            console.log(selectedLocalParks)
-            const mappedParks = selectedLocalParks.map(park => <div><h3>{park.RecAreaName}</h3><h3>{park.FacilityName}</h3><p>{park.RecAreaDescription}</p><p>{park.FacilityDescription}</p></div>)
+            const mappedParks = selectedLocalParks.map(park => <div><h3>{park.name}</h3><p>{park.description}</p></div>)
             return mappedParks
         } else {
             return null
@@ -45,6 +45,20 @@ class CityCard extends React.Component {
     render() {
         return (
             <div>
+                <div>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                    <a className="navbar-brand" href="#">Navbar</a>
+                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div className="navbar-nav">
+                            <a className="nav-item nav-link active" href="#">Home <span className="sr-only">(current)</span></a>
+                            <a className="nav-item nav-link" href="#">Features</a>
+                            <a className="nav-item nav-link" href="#">Pricing</a>
+                        </div>
+                    </div>
+                </nav>
+                </div>
+       
+
             <section>
                 <h1>{this.props.city.attributes.name}</h1>
                 <div className="row">

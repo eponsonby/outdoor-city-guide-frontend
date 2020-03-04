@@ -20,7 +20,7 @@ const getParkTypeAndIds = (city) => {
         ]
     case "Salt Lake City":
         return [
-            {type: "facilities", ids: ["236556", "240530"]},
+            {type: "facilities", ids: ["236556"]},
             {type: "recareas", ids: ["1035", "14748"]}
         ]
     default:
@@ -56,6 +56,7 @@ const getUrls = (data) => {
                     return response.json()
                 })
             )
+            console.log(parkData)
             dispatch(setLocalParks(parkData))
         //     const res = await fetch('http://localhost:3001/api/v1/get_local_parks/?id=1106')
 
