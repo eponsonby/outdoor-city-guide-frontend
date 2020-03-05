@@ -9,6 +9,7 @@ import Signup from './components/Signup'
 import Cities from './components/Cities'
 import Home from './components/Home'
 import CityCard from './components/CityCard'
+import Parks from './components/Parks'
 import { Route, Switch, withRouter} from 'react-router-dom'
 
 class App extends React.Component {
@@ -30,9 +31,9 @@ class App extends React.Component {
             <Route exact path='/cities' component={Cities}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/signup' render={(props) => <Signup history={props.history}/>}/>
-            <Route exact path='/cities/:id' render={props => {
+            <Route exact path='/cities/:id/parks' render={props => {
               const city = this.props.cities.data.length > 0 ? this.props.cities.data.find(city => city.id === props.match.params.id) : null
-              return city !== null ? <CityCard city={city}/> : <p>Error</p>
+              return city !== null ? <Parks city={city}/> : <p>Error</p>
             }
           }/>
           </Switch>
