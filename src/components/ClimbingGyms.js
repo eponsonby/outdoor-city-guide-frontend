@@ -12,7 +12,7 @@ class ClimbingGyms extends React.Component {
     render() {
         return (
             <div>
-                <ParksNavbar/>
+                <ParksNavbar city={this.props.city}/>
                 <h3>Climbing Gyms</h3>
                     {this.getClimbingGymInfo()}
             </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom'
 class ParksNavbar extends Component {
 
     render() {
@@ -11,19 +11,19 @@ class ParksNavbar extends Component {
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Parks <span className="sr-only">(current)</span></a>
+                        <Link className="nav-link" to={`/cities/${this.props.city.id}/parks`}>Parks <span className="sr-only">(current)</span></Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Activities</a>
+                        <Link className="nav-link" to={`/cities/${this.props.city.id}/activities`}>Activities</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Breweries</a>
+                        <Link className="nav-link" to={`/cities/${this.props.city.id}/breweries`}>Breweries</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Outdoor Stores</a>
+                        <Link className="nav-link" to={`/cities/${this.props.city.id}/outdoor-stores`}>Outdoor Stores</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Climbing Gyms</a>
+                        <Link className="nav-link" to={`/cities/${this.props.city.id}/climbing-gyms`}>Climbing Gyms</Link>
                     </li>
                 </ul>
         </div>
