@@ -38,11 +38,13 @@ class Parks extends React.Component {
 
         <div>
             <h1>{this.props.city.attributes.name}</h1>
-            <div class="row">
-                <div class="col-3">
+            <div className="row">
+                <div className="col-3">
                     <ParksNavbar city={this.props.city}/>
                 </div>
-                <div class="col-9">
+                <div className="col-9">
+                    <h1>Nearby Parks and Recreation Areas</h1>
+                    <br></br>
                     {this.getNatParkInfo()}
                     {this.getLocalParkInfo()}
                 </div>
