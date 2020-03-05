@@ -8,8 +8,8 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Cities from './components/Cities'
 import Home from './components/Home'
-import CityCard from './components/CityCard'
 import Parks from './components/Parks'
+import ClimbingGyms from './components/ClimbingGyms'
 import { Route, Switch, withRouter} from 'react-router-dom'
 
 class App extends React.Component {
@@ -34,6 +34,11 @@ class App extends React.Component {
             <Route exact path='/cities/:id/parks' render={props => {
               const city = this.props.cities.data.length > 0 ? this.props.cities.data.find(city => city.id === props.match.params.id) : null
               return city !== null ? <Parks city={city}/> : <p>Error</p>
+            }
+          }/>
+          <Route exact path='/cities/:id/climbing-gyms' render={props => {
+              const secondCity = this.props.cities.data.length > 0 ? this.props.cities.data.find(city => city.id === props.match.params.id) : null
+              return secondCity !== null ? <ClimbingGyms city={secondCity}/> : <p>Error</p>
             }
           }/>
           </Switch>

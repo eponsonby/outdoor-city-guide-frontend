@@ -2,6 +2,7 @@ import React from 'react'
 import { getNationalParks } from '../actions/parks'
 import { getLocalParks } from '../actions/localParks'
 import { connect } from 'react-redux'
+import ParksNavbar from './ParksNavbar'
 // import {Link} from 'react-router-dom'
 
 class CityCard extends React.Component {
@@ -35,6 +36,7 @@ class CityCard extends React.Component {
     render() {
         return (
             <div>
+                <ParksNavbar/>
                 <h3>Nearby Parks and Recreation Areas</h3>
                     {this.getNatParkInfo()}
                     {this.getLocalParkInfo()}
