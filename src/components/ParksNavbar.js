@@ -4,12 +4,13 @@ class ParksNavbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="parks-navbar-container">
+            <nav className="navbar navbar-expand-lg navbar-light">
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarText">
-                <ul className="navbar-nav mr-auto">
+                <ul className="nav flex-column">
                     <li className="nav-item active">
                         <Link className="nav-link" to={`/cities/${this.props.city.id}/parks`}>Parks <span className="sr-only">(current)</span></Link>
                     </li>
@@ -26,8 +27,9 @@ class ParksNavbar extends Component {
                         <Link className="nav-link" to={`/cities/${this.props.city.id}/climbing-gyms`}>Climbing Gyms</Link>
                     </li>
                 </ul>
-        </div>
-    </nav>
+            </div>
+            </nav>
+            </div>
         )
     }   
 }

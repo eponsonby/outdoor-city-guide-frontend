@@ -35,12 +35,20 @@ class Parks extends React.Component {
     
     render() {
         return (
-            <div>
-                <h1>{this.props.city.attributes.name}, Colorado</h1>
-                <ParksNavbar city={this.props.city}/>
+
+        <div>
+            <h1>{this.props.city.attributes.name}</h1>
+            <div class="row">
+                <div class="col-3">
+                    <ParksNavbar city={this.props.city}/>
+                </div>
+                <div class="col-9">
                     {this.getNatParkInfo()}
                     {this.getLocalParkInfo()}
+                </div>
             </div>
+        </div> 
+
         )
     }
 }
