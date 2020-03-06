@@ -8,7 +8,7 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Cities from './components/Cities'
 import Home from './components/Home'
-import Parks from './components/Parks'
+import ParksContainer from './components/ParksContainer'
 import ClimbingGyms from './components/ClimbingGyms'
 import OutdoorStores from './components/OutdoorStores'
 import { Route, Switch, withRouter} from 'react-router-dom'
@@ -31,7 +31,7 @@ class App extends React.Component {
             <Route exact path='/cities/:id/parks'
             render={(props) => {
                 let city = this.props.cities.data.length > 0 ? this.props.cities.data.find(city => city.id === props.match.params.id) : null
-                return city !== null ? <Parks city={city}/> : <p>Error</p>
+                return city !== null ? <ParksContainer city={city}/> : <p>Error</p>
               }
             }/>
             <Route exact path='/cities/:id/climbing-gyms'

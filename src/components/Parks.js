@@ -1,33 +1,22 @@
 import React from 'react'
-import { getNationalParks } from '../actions/parks'
-import { getLocalParks } from '../actions/localParks'
-import { connect } from 'react-redux'
 import ParksNavbar from './ParksNavbar'
 // import {Link} from 'react-router-dom'
 
 class Parks extends React.Component {
-
-    componentDidMount() {
-        this.props.getNationalParks()
-        this.props.getLocalParks(this.props.city.attributes.name)
-    }
-
-    getNatParkInfo = () => {
-        const selectedParks = this.props.parks.length > 0 ? this.props.parks.filter(park => park.states === this.props.city.attributes.state) : "nothing"
-        if (selectedParks !== "nothing") {
-            const desiredContent = selectedParks.map(park => ({description: park.description, name: park.fullName, url: park.url}))
-            return desiredContent.map(park => <div><h3>{park.name}</h3> <p>{park.description}</p></div>)
+    
+    mapNationalParks = () => {
+        if (this.props.nationalParks !== null) {
+            let parks = this.props.nationalParks.map(park => ({description: park.description, name: park.fullName, url: park.url}))
+            return parks.map(park => <div><h3>{park.name}</h3> <p>{park.description}</p></div>)
         } else {
             return null
         }
     }
     
-    getLocalParkInfo = () => {
-        const selectedLocalParks = this.props.localParks.length > 0 ? this.props.localParks : null
-        
-        if (selectedLocalParks !== null) {
-            const mappedParks = selectedLocalParks.map(park => <div><h3>{park.name}</h3><p>{park.description}</p></div>)
-            return mappedParks
+    mapLocalParks = () => {        
+        if (this.props.localParks !== null) {
+            let localParks = this.props.localParks.map(park => <div><h3>{park.name}</h3><p>{park.description}</p></div>)
+            return localParks
         } else {
             return null
         }
@@ -45,8 +34,8 @@ class Parks extends React.Component {
                 <div className="col-9">
                     <h1>Nearby Parks and Recreation Areas</h1>
                     <br></br>
-                    {this.getNatParkInfo()}
-                    {this.getLocalParkInfo()}
+                    {this.mapNationalParks()}
+                    {this.mapLocalParks()}
                 </div>
             </div>
         </div> 
@@ -55,24 +44,5 @@ class Parks extends React.Component {
     }
 }
 
-    const mapStateToProps = (state) => {
-        return {
-            parks: state.parks,
-            localParks: state.localParks
-        }
-    }
     
-    const mapDispatchToProps = (dispatch) => {
-        return (
-            {
-                getNationalParks: () => {
-                    dispatch(getNationalParks())
-                },
-                getLocalParks: (city) => {
-                    dispatch(getLocalParks(city))
-                }
-            }
-        )
-    }
-    
-    export default connect(mapStateToProps, mapDispatchToProps)(Parks)
+export default Parks

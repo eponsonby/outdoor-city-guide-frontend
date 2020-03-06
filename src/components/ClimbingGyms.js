@@ -5,7 +5,7 @@ class ClimbingGyms extends React.Component {
 
     getClimbingGymInfo = function() {
         const climbingGymsFromState = this.props.city.attributes.climbing_gyms
-        const climbingGymText = climbingGymsFromState.map(cg => <div><p>{cg.name}</p><p>{cg.street}</p><p>{cg.city.name}, {cg.state}</p><p>{cg.zip}</p></div>)
+        const climbingGymText = climbingGymsFromState.map(cg => <div><p><a href={cg.url}>{cg.name}</a><br></br>{cg.street}<br></br>{cg.city.name}, {cg.state}<br></br>{cg.zip}</p></div>)
         return climbingGymText
     }
     
@@ -18,8 +18,11 @@ class ClimbingGyms extends React.Component {
                 <div class="col-3">
                     <ParksNavbar city={this.props.city}/>
                 </div>
-                <div class="col-9">
-                    {this.getClimbingGymInfo()}
+                <div class="col-4">
+                    {this.getClimbingGymInfo().slice(0,2)}
+                </div>
+                <div className="col-5">
+                    {this.getClimbingGymInfo().slice(2)}
                 </div>
             </div>
         </div> 

@@ -56,7 +56,6 @@ const getUrls = (data) => {
                     return response.json()
                 })
             )
-            console.log(parkData)
             dispatch(setLocalParks(parkData))
         //     const res = await fetch('http://localhost:3001/api/v1/get_local_parks/?id=1106')
 
