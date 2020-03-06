@@ -14,12 +14,12 @@ class ParksNavbar extends Component {
                     <li className="nav-item active">
                         <Link className="nav-link" to={`/cities/${this.props.city.id}/parks`}>Parks <span className="sr-only">(current)</span></Link>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <Link className="nav-link" to={`/cities/${this.props.city.id}/activities`}>Activities</Link>
-                    </li>
-                    <li className="nav-item">
+                    </li> */}
+                    {/* <li className="nav-item">
                         <Link className="nav-link" to={`/cities/${this.props.city.id}/breweries`}>Breweries</Link>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                         <Link className="nav-link" to={`/cities/${this.props.city.id}/outdoor-stores`}>Outdoor Stores</Link>
                     </li>
