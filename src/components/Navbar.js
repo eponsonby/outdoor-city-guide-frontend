@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import Logout from './Logout'
 
 class Navbar extends Component {
@@ -16,7 +15,7 @@ class Navbar extends Component {
             <nav className="navbar navbar-expand-lg navbar-light navbar-right">
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <a className="nav-item nav-link active" href="/cities">Home</a>
+                            <a className="nav-item nav-link active" href="/">Home</a>
                             <a className="nav-item nav-link" href="#">Logout</a>
                         </div>
                     </div>

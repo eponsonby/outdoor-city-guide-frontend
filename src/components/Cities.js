@@ -14,18 +14,22 @@ class Cities extends React.Component {
             return this.props.cities.data.map(city => <p><Link to={`/cities/${city.id}/parks`}>{city.attributes.name}</Link></p>)
         }
     }
-    // {`/cities/${this.props.city.id}/parks`}>
+
 
     render() {
         return (
             <div>
-            <h1>Title</h1>
+                <br></br><br></br>
+            <h1>Welcome to the Outdoor City Guide</h1>
             <div className="row">
-                <div className="col-6">
-                    {this.linkedCityNames().slice(0,3)}
+                <div className="col-4">
+                {this.linkedCityNames().slice(0,2)}
                 </div>
-                <div className="col-6">
-                    {this.linkedCityNames().slice(3)}
+                <div className="col-4">
+                    {this.linkedCityNames().slice(2,4)}
+                </div>
+                <div className="col-4">
+                    {this.linkedCityNames().slice(4)}
                 </div>
             </div>
         </div> 
