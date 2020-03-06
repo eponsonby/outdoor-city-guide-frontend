@@ -1,5 +1,6 @@
 import React from 'react'
 import ParksNavbar from './ParksNavbar'
+import Navbar from './Navbar'
 
 class OutdoorStores extends React.Component {
 
@@ -12,6 +13,7 @@ class OutdoorStores extends React.Component {
     render() {
         return (
             <div>
+                <Navbar/>
             <h1>{this.props.city.attributes.name}</h1>
             <div className="row">
                 <div className="col-3">

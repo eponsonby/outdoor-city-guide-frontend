@@ -1,6 +1,5 @@
 import React from 'react';
 // import './App.css';
-import Navbar from './components/Navbar'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import Login from './components/Login'
@@ -23,7 +22,7 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        {loggedIn ? <Navbar/> : <Home/> }
+        {/* {loggedIn ? <Navbar/> : <Home/> } */}
           <Switch>
             <Route exact path='/' component={Cities}/>
             <Route exact path='/login' component={Login}/>

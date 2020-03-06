@@ -23,12 +23,6 @@ class CityCard extends React.Component {
                         {this.getNatParkInfo()}
                         {this.getLocalParkInfo()}
                     </div>
-                    <div className="col-md-3">
-                        <h3>Activities Loved By Locals</h3>
-                    </div>
-                    <div className="col-md-3">
-                        <h3>Breweries</h3>
-                    </div>
                 </div>
                 <div className="row">
                     <div className="col-md-4">

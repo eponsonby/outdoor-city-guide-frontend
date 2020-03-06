@@ -1,5 +1,6 @@
 import React from 'react'
 import ParksNavbar from './ParksNavbar'
+import Navbar from './Navbar'
 // import {Link} from 'react-router-dom'
 
 class Parks extends React.Component {
@@ -26,12 +27,14 @@ class Parks extends React.Component {
         return (
 
         <div>
-            <h1>{this.props.city.attributes.name}</h1>
+            <Navbar/>
+            <br></br><br></br>
             <div className="row">
                 <div className="col-3">
                     <ParksNavbar city={this.props.city}/>
                 </div>
                 <div className="col-9">
+                <h1>{this.props.city.attributes.name}</h1>
                     <h1>Nearby Parks and Recreation Areas</h1>
                     <br></br>
                     {this.mapNationalParks()}
