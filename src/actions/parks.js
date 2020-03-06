@@ -17,7 +17,6 @@ export const setNationalParks = parks => {
             const parkList = parkData.data
             dispatch(setNationalParks(parkList))
         } catch (err) {
-            alert("Failed to load parks")
         }
     }
     

@@ -57,16 +57,7 @@ const getUrls = (data) => {
                 })
             )
             dispatch(setLocalParks(parkData))
-        //     const res = await fetch('http://localhost:3001/api/v1/get_local_parks/?id=1106')
-
-        //     if (!res.ok) {
-        //         throw res
-        //     }
-        //     const parkData = await res.json()
-        //     dispatch(setLocalParks(parkData))
-        // } catch (err) {
-        //     alert("Failed to load local parks")
-        // }
+       
     }
     
 }

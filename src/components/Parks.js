@@ -7,7 +7,7 @@ class Parks extends React.Component {
     mapNationalParks = () => {
         if (this.props.nationalParks !== null) {
             let parks = this.props.nationalParks.map(park => ({description: park.description, name: park.fullName, url: park.url}))
-            return parks.map(park => <div><h3>{park.name}</h3> <p>{park.description}</p></div>)
+            return parks.map(park => <div key={park.name}><h3>{park.name}</h3><p>{park.description}</p></div>)
         } else {
             return null
         }
@@ -15,10 +15,10 @@ class Parks extends React.Component {
     
     mapLocalParks = () => {        
         if (this.props.localParks !== null) {
-            let localParks = this.props.localParks.map(park => <div><h3>{park.name}</h3><p>{park.description}</p></div>)
+            let localParks = this.props.localParks.map(park => <div key={park.name}><h3>{park.name}</h3><p>{park.description}</p></div>)
             return localParks
         } else {
-            return null
+            return "Loading"
         }
     }
     

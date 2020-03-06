@@ -11,7 +11,7 @@ class Cities extends React.Component {
         if (this.props.cities.loading === true) {
             return []
         } else {
-            return this.props.cities.data.map(city => <p><Link to={`/cities/${city.id}/parks`}>{city.attributes.name}</Link></p>)
+            return this.props.cities.data.map(city => <p key={city.id}><Link to={`/cities/${city.id}/parks`}>{city.attributes.name}</Link></p>)
         }
     }
 
@@ -20,7 +20,9 @@ class Cities extends React.Component {
         return (
             <div>
                 <br></br><br></br>
-            <h1>Welcome to the Outdoor City Guide</h1>
+            <h1 className="cities-header">Welcome to the Outdoor City Guide</h1>
+            <p className="cities-welcome-text">Click on one of the cities below to see parks, climbing gyms and more!</p>
+            <br></br><br></br>
             <div className="row">
                 <div className="col-4">
                 {this.linkedCityNames().slice(0,2)}
