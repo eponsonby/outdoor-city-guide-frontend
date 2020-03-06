@@ -8,7 +8,7 @@ export const setLocalParks = localParks => {
 const getParkTypeAndIds = (city) => {
     switch (city) {
     case "Boulder":
-        return [{type: "recareas", ids: ["1106"]}]
+        return [{type: "facilities", ids: ["250788", "252294", "250790"]}]
     case "Reno":
         return [{type: "facilities", ids: ["239692", "239747"]}]
     case "Portland":
@@ -23,6 +23,8 @@ const getParkTypeAndIds = (city) => {
             {type: "facilities", ids: ["236556"]},
             {type: "recareas", ids: ["1035", "14748"]}
         ]
+    case "Seattle":
+            return [{type: "recareas", ids: ["16822"]}]
     default:
         return "Error in Get Local Parks Action"
     }
