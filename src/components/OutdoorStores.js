@@ -18,10 +18,10 @@ class OutdoorStores extends React.Component {
                     <ParksNavbar city={this.props.city}/>
                 </div>
                 <div className="col-4">
-                    {this.getOutdoorStoresInfo().slice(0,5)}
+                    {this.getOutdoorStoresInfo().slice(0,4)}
                 </div>
                 <div className="col-5">
-                    {this.getOutdoorStoresInfo().slice(5)}
+                    {this.getOutdoorStoresInfo().slice(4)}
                 </div>
             </div>
         </div> 
