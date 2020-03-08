@@ -30,13 +30,12 @@ code {
 }
 
 .cities-row{
-  margin-bottom: 50px;
-  height: 200px;
+  margin-top: 25px;
 }
 
 .cities-column {
   /* border: 1px solid blue; */
-  height: 200px;
+
 }
 
 .cities-container {

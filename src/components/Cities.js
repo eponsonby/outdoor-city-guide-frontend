@@ -24,21 +24,21 @@ class Cities extends React.Component {
             <br></br><br></br>
             <div className="container cities-container">
             <div className="row cities-row">
-                <div className="col cities-column">
+                <div className="col-sm cities-column">
                 {/* Boulder */}
                 <div className="centered-text">
                     {this.linkedCityNames().slice(0,1)}
                 </div>
                 <img className="city-pic" src='boulder.jpg' alt="Boulder"></img>
                 </div>
-                <div className="col col-md-offset-1 cities-column">
+                <div className="col-sm cities-column">
                 {/* Seattle */}
                     <div className="centered-text">
                     {this.linkedCityNames().slice(1,2)}
                     </div>
                     <img className="city-pic" src='seattle.jpg' alt="Seattle"></img>
                 </div>
-                <div className="col col-md-offset-1 cities-column">
+                <div className="col-sm cities-column">
                 <div className="centered-text">
                 {/* Reno */}  
                     {this.linkedCityNames().slice(2,3)}
@@ -47,21 +47,21 @@ class Cities extends React.Component {
                 </div>
             </div>
             <div className="row cities-row">
-                <div className="col cities-column">
+                <div className="col-sm cities-column">
                 <div className="centered-text">
                 {/* Portland */} 
                     {this.linkedCityNames().slice(3,4)}
                 </div>
                     <img className="city-pic" src='portland.jpg' alt="Portland"></img>
                 </div>
-                <div className="col col-md-offset-1 cities-column">
+                <div className="col-sm cities-column">
                 <div className="centered-text">
                 {/* Ashevillve */} 
                     {this.linkedCityNames().slice(4,5)}
                 </div>
                 <img className="city-pic" src='asheville.jpg' alt="Asheville"></img>
                 </div>
-                <div className="col col-md-offset-1 cities-column">
+                <div className="col-sm cities-column">
                 <div className="centered-text">
                 {/* Salt Lake City */} 
                     {this.linkedCityNames().slice(5)}
