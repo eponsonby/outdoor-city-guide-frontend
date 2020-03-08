@@ -14,21 +14,26 @@ class ClimbingGyms extends React.Component {
 
         return (
             <div>
-                <Navbar/>
-                <br></br><br></br><br></br>
-            <h1>{this.props.city.attributes.name}</h1>
-            <div class="row">
-                <div class="col-3">
-                    <ParksNavbar city={this.props.city}/>
+                <div className="container">
+                <div className="row">
+                    <div className="col-sm">
+                        <Navbar/>
+                    </div>
                 </div>
-                <div class="col-4">
-                    {this.getClimbingGymInfo().slice(0,2)}
-                </div>
-                <div className="col-5">
-                    {this.getClimbingGymInfo().slice(2)}
+                <h1 className="city-name text-center">{this.props.city.attributes.name}</h1>
+                <div class="row">
+                    <div class="col-3">
+                        <ParksNavbar city={this.props.city}/>
+                    </div>
+                    <div class="col-4">
+                        {this.getClimbingGymInfo().slice(0,2)}
+                    </div>
+                    <div className="col-5">
+                        {this.getClimbingGymInfo().slice(2)}
+                    </div>
                 </div>
             </div>
-        </div> 
+            </div>
 
         )
     }

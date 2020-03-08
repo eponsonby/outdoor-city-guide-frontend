@@ -27,9 +27,13 @@ class Parks extends React.Component {
         return (
 
         <div>
-            <Navbar/>
-            <br></br><br></br><br></br>
-            <h1>{this.props.city.attributes.name}</h1>  
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm">
+                        <Navbar/>
+                    </div>
+                </div>
+            <h1 className="city-name text-center">{this.props.city.attributes.name}</h1>  
             <div className="row">
                 <div className="col-3">
                     <ParksNavbar city={this.props.city}/>
@@ -42,7 +46,8 @@ class Parks extends React.Component {
                     {this.mapLocalParks()}
                 </div>
             </div>
-        </div> 
+        </div>
+        </div>
 
         )
     }
