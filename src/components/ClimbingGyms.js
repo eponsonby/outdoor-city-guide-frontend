@@ -15,6 +15,7 @@ class ClimbingGyms extends React.Component {
         return (
             <div>
                 <Navbar/>
+                <br></br><br></br><br></br>
             <h1>{this.props.city.attributes.name}</h1>
             <div class="row">
                 <div class="col-3">

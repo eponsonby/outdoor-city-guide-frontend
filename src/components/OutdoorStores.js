@@ -13,20 +13,30 @@ class OutdoorStores extends React.Component {
     render() {
         return (
             <div>
-                <Navbar/>
-            <h1>{this.props.city.attributes.name}</h1>
-            <div className="row">
-                <div className="col-3">
-                    <ParksNavbar city={this.props.city}/>
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm">
+                        <Navbar/>
+                    </div>
                 </div>
-                <div className="col-4">
-                    {this.getOutdoorStoresInfo().slice(0,4)}
+                <div className="row">
+                    <div className="col-sm mb-5">
+                        <h1 className="city-name text-center">{this.props.city.attributes.name}</h1>
+                    </div>
                 </div>
-                <div className="col-5">
-                    {this.getOutdoorStoresInfo().slice(4)}
+                <div className="row">
+                    <div className="col-sm">
+                        <ParksNavbar city={this.props.city}/>
+                    </div>
+                    <div className="col-sm">
+                        {this.getOutdoorStoresInfo().slice(0,4)}
+                    </div>
+                    <div className="col-sm">
+                        {this.getOutdoorStoresInfo().slice(4)}
+                    </div>
                 </div>
             </div>
-        </div> 
+            </div> 
         )
     }
 }

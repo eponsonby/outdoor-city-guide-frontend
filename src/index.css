@@ -33,11 +33,6 @@ code {
   margin-top: 25px;
 }
 
-.cities-column {
-  /* border: 1px solid blue; */
-
-}
-
 .cities-container {
   text-align: center;
 }
@@ -56,6 +51,7 @@ code {
 }
 
 .centered-text a {
-  color: white;
-  font-size: 40px;
+  font-size: 35px;
+  text-decoration: none;
+  font-weight: bold;
 }

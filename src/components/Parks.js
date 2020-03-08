@@ -28,13 +28,14 @@ class Parks extends React.Component {
 
         <div>
             <Navbar/>
-            <br></br><br></br>
+            <br></br><br></br><br></br>
+            <h1>{this.props.city.attributes.name}</h1>  
             <div className="row">
                 <div className="col-3">
                     <ParksNavbar city={this.props.city}/>
                 </div>
                 <div className="col-9">
-                <h1>{this.props.city.attributes.name}</h1>
+                
                     <h1>Nearby Parks and Recreation Areas</h1>
                     <br></br>
                     {this.mapNationalParks()}

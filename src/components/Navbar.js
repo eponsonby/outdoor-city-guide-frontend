@@ -17,17 +17,17 @@ class Navbar extends Component {
                             <li className="nav-item active">
                                 <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Cities
                                 </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/cities/1/parks">Boulder</a>
-                            <a class="dropdown-item" href="/cities/2/parks">Seattle</a>
-                            <a class="dropdown-item" href="/cities/3/parks">Reno</a>
-                            <a class="dropdown-item" href="/cities/4/parks">Portland</a>
-                            <a class="dropdown-item" href="/cities/5/parks">Asheville</a>
-                            <a class="dropdown-item" href="/cities/6/parks">Salt Lake City</a>
+                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a className="dropdown-item" href="/cities/1/parks">Boulder</a>
+                            <a className="dropdown-item" href="/cities/2/parks">Seattle</a>
+                            <a className="dropdown-item" href="/cities/3/parks">Reno</a>
+                            <a className="dropdown-item" href="/cities/4/parks">Portland</a>
+                            <a className="dropdown-item" href="/cities/5/parks">Asheville</a>
+                            <a className="dropdown-item" href="/cities/6/parks">Salt Lake City</a>
                             </div>
                             </li>
                             <li className="nav-item">
