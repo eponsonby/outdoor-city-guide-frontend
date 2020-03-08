@@ -58,16 +58,23 @@ code {
 
 /* components/OutdoorStores.js */
 
-.outdoor-store-name {
+.outdoor-store-name, .park_name {
   font-size: 17px;
   font-weight: bold;
   color: black;
 }
 
-.outdoor-store-name:hover{
+.outdoor-store-name:hover, .park-name:hover{
   color: grey;
 }
 
-.outdoor-store-name:visited{
+.outdoor-store-name:visited, .park-name:visited{
   color: black;
 }
+
+.park-name {
+  font-size: 17px;
+  font-weight: bold;
+  color: black;
+}
+
