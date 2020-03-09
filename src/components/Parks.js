@@ -30,10 +30,12 @@ class Parks extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-sm">
+                        <h1 className="city-name">{this.props.city.attributes.name}</h1>
+                    </div>
+                    <div className="col-sm">
                         <Navbar/>
                     </div>
                 </div>
-            <h1 className="city-name text-center">{this.props.city.attributes.name}</h1>  
             <div className="row">
                 <div className="col-3">
                     <ParksNavbar city={this.props.city}/>

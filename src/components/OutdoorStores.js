@@ -16,12 +16,10 @@ class OutdoorStores extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-sm">
-                        <Navbar/>
+                        <h1 className="city-name">{this.props.city.attributes.name}</h1>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col-sm mb-5">
-                        <h1 className="city-name text-center">{this.props.city.attributes.name}</h1>
+                    <div className="col-sm">
+                        <Navbar/>
                     </div>
                 </div>
                 <div className="row">

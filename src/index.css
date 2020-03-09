@@ -12,10 +12,6 @@ code {
     monospace;
 }
 
-.parks-navbar-container {
-  width: 150px;
-}
-
 
 .navbar {
   font-size: 15px;
@@ -58,7 +54,7 @@ code {
 
 /* components/OutdoorStores.js */
 
-.outdoor-store-name, .park_name {
+.outdoor-store-name, .park-name {
   font-size: 17px;
   font-weight: bold;
   color: black;
@@ -72,9 +68,14 @@ code {
   color: black;
 }
 
-.park-name {
-  font-size: 17px;
-  font-weight: bold;
-  color: black;
+.city-name, .cities-header {
+  font-family: "Pacifico", cursive;
+  font-size: 30px;
 }
+
+.city-name {
+  padding-top: 20px;
+}
+
+
 
