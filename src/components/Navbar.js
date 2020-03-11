@@ -31,7 +31,8 @@ class Navbar extends Component {
                             </div>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">Logout</a>
+                                <Logout/>
+                                {/* <a className="nav-link" href="/">Logout</a> */}
                             </li>
                         </ul>
                     </div>

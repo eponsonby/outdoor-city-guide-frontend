@@ -7,14 +7,14 @@ class Logout extends Component {
 // make this a link instead of a button
     render() {
         return (
-            <form onSubmit={(event) => {
+            <a className="nav-link" href="/" onClick={(event) => {
                     event.preventDefault()
                     this.props.logout()
                     this.props.history.push('/')
                 }
             }>
-                <input type="submit" value="Log Out"/>
-            </form>
+                Log Out
+            </a>
         )
     }
 }
