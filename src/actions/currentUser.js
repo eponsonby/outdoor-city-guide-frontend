@@ -59,7 +59,7 @@ export const signup = (credentials, history) => {
             } else {
                 dispatch(setCurrentUser(user.data))
                 dispatch(getCities())
-                history.push('/')
+                history.push('/cities')
             }
         })
         .catch(console.log)
@@ -92,7 +92,7 @@ export const getCurrentUser = () => {
         .then(r => r.json())
         .then(response => {
             if (response.error) {
-                alert(response.error)
+                console.log(response.error)
             } else {
                 dispatch(setCurrentUser(response.data))
                 dispatch(getCities())
