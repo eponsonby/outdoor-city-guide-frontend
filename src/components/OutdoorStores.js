@@ -6,7 +6,7 @@ class OutdoorStores extends React.Component {
 
     getOutdoorStoresInfo = function() {
         const outdoorStoresFromState = this.props.city.attributes.outdoor_stores
-        const outdoorStoresText = outdoorStoresFromState.map(os => <div className="row"><p><a className="outdoor-store-name text-decoration-none" href={os.url} target="_blank">{os.name}</a><br></br>{os.street}<br></br>{os.city.name}, {os.state}<br></br>{os.zip}</p></div>)
+        const outdoorStoresText = outdoorStoresFromState.map(os => <div className="row"><p><a className="outdoor-store-name text-decoration-none" href={os.url} target="_blank" rel="noopener noreferrer">{os.name}</a><br></br>{os.street}<br></br>{os.city.name}, {os.state}<br></br>{os.zip}</p></div>)
         return outdoorStoresText
     }
     

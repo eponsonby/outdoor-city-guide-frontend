@@ -1,4 +1,4 @@
-import { getCities, clearCities } from "./cities"
+import { getCities } from "./cities"
 
 // synchronous action creators
 export const setCurrentUser = user => {

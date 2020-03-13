@@ -5,13 +5,6 @@ export const setCities = cities => {
     }
 }
 
-export const clearCities = () => {
-    return {
-        type: "CLEAR_CITIES",
-
-    }
-}
-
 export const loadingCities = () => ({
         type: "LOADING_CITIES"
 })

@@ -19,7 +19,7 @@ class Navbar extends Component {
                                 <a className="nav-link" href="/cities">Home<span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a className="nav-link dropdown-toggle" href="/cities" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Cities
                                 </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
