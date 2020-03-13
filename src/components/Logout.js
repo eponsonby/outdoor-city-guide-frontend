@@ -4,7 +4,6 @@ import { logout } from '../actions/currentUser'
 import { withRouter } from 'react-router-dom'
 
 class Logout extends Component {
-// make this a link instead of a button
     render() {
         return (
             <a className="nav-link" href="/" onClick={(event) => {

@@ -2,6 +2,7 @@ import React from 'react';
 // import './App.css';
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
+import { getCities } from './actions/cities'
 import Login from './components/Login'
 // import Logout from './components/Logout'
 import Signup from './components/Signup'
@@ -15,6 +16,7 @@ import { Route, Switch, withRouter} from 'react-router-dom'
 class App extends React.Component {
   componentDidMount() {
     this.props.getCurrentUser()
+    this.props.getCities()
   }
 
   render() {
@@ -60,6 +62,19 @@ const mapStateToProps = state => {
   })
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return (
+      {
+          getCities: () => {
+              dispatch(getCities())
+          },
+          getCurrentUser: () => {
+              dispatch(getCurrentUser())
+          }
+      }
+  )
+}
 
 
-export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

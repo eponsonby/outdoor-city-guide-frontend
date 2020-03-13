@@ -3,8 +3,13 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import Spinner from './Spinner'
 import { Link } from 'react-router-dom'
+import { getCities } from '../actions/cities'
 
 class Cities extends React.Component {
+    // Gets fired immediately after render()
+    componentDidMount() {
+        this.props.getCities()
+    }
 
     linkedCityNames = () => {
         if (this.props.cities.loading === true) {
@@ -19,7 +24,7 @@ class Cities extends React.Component {
         return (
             <div>
                 <br></br><br></br>
-            <h1 className="cities-header">Welcome to the Outdoor City Guide</h1>
+            <h1 className="cities-header">Welcome to The Trailhead</h1>
             <p className="cities-welcome-text">Click on one of the cities below to see parks, climbing gyms and more!</p>
             <br></br><br></br>
             <div className="container cities-container">
@@ -56,7 +61,7 @@ class Cities extends React.Component {
                 </div>
                 <div className="col-sm cities-column">
                 <div className="centered-text">
-                {/* Ashevillve */} 
+                {/* Asheville */} 
                     {this.linkedCityNames().slice(4,5)}
                 </div>
                 <img className="city-pic" src='asheville.jpg' alt="Asheville"></img>
@@ -79,11 +84,20 @@ class Cities extends React.Component {
 }
 
 
-
 const mapStateToProps = state => {
   return {
     cities: state.cities
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Cities))
+const mapDispatchToProps = (dispatch) => {
+    return (
+        {
+            getCities: () => {
+                dispatch(getCities())
+            }
+        }
+    )
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cities))

@@ -19,7 +19,7 @@ class Parks extends React.Component {
             let localParks = this.props.localParks.map(park => <div key={park.name}><a className="park-name text-decoration-none" href="/" target="_blank">{park.name}</a><p>{park.description}</p></div>)
             return localParks
         } else {
-            return "Loading"
+            return null
         }
     }
     

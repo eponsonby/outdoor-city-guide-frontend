@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Logout from './Logout'
 import { Link } from 'react-router-dom'
+import Home from './Home'
 
 class Navbar extends Component {
 
@@ -15,7 +16,7 @@ class Navbar extends Component {
                     <div className="collapse navbar-collapse" id="navbarText">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item active">
-                                <a className="nav-link" href="/">Home<span className="sr-only">(current)</span></a>
+                                <a className="nav-link" href="/cities">Home<span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,8 +32,7 @@ class Navbar extends Component {
                             </div>
                             </li>
                             <li className="nav-item">
-                                <Logout/>
-                                {/* <a className="nav-link" href="/">Logout</a> */}
+                                {this.props.loggedIn? <Logout/> : <Home/> }
                             </li>
                         </ul>
                     </div>
@@ -49,5 +49,6 @@ const mapStateToProps = (state) => {
       loggedIn: !!state.currentUser
     }
   }
+
 
 export default connect(mapStateToProps)(Navbar)
