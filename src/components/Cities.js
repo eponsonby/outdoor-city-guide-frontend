@@ -7,9 +7,9 @@ import { getCities } from '../actions/cities'
 
 class Cities extends React.Component {
     // Gets fired immediately after render()
-    componentDidMount() {
-        this.props.getCities()
-    }
+    // componentDidMount() {
+    //     this.props.getCities()
+    // }
 
     linkedCityNames = () => {
         if (this.props.cities.loading === true) {
@@ -90,14 +90,14 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return (
-        {
-            getCities: () => {
-                dispatch(getCities())
-            }
-        }
-    )
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return (
+//         {
+//             getCities: () => {
+//                 dispatch(getCities())
+//             }
+//         }
+//     )
+// }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cities))
+export default withRouter(connect(mapStateToProps)(Cities))

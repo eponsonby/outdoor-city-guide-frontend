@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+[![CircleCI](https://circleci.com/gh/eponsonby/outdoor-city-guide-frontend.svg?style=svg)](https://circleci.com/gh/eponsonby/outdoor-city-guide-frontend)
 
 In the project directory, you can run:
 
