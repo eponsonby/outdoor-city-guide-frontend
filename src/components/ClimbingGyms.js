@@ -1,5 +1,6 @@
 import React from 'react'
 import ParksNavbar from './ParksNavbar'
+import ExampleModal from './ExampleModal'
 import Navbar from './Navbar'
 
 class ClimbingGyms extends React.Component {
@@ -14,6 +15,7 @@ class ClimbingGyms extends React.Component {
 
         return (
             <div>
+                <ExampleModal/>
             <div className="container">
                 <div className="row">
                     <div className="col-sm">

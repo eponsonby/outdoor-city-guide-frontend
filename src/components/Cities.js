@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import Spinner from './Spinner'
+import Navbar from './Navbar'
+import ExampleModal from './ExampleModal'
 import { Link } from 'react-router-dom'
 import { getCities } from '../actions/cities'
 
@@ -23,11 +25,17 @@ class Cities extends React.Component {
     render() {
         return (
             <div>
-                <br></br><br></br>
+                
+             {/* <div className="row">
+                <div className="col-sm">
+                    <Navbar/>
+                </div>
+            </div> */}
             <h1 className="cities-header">Welcome to The Trailhead</h1>
             <p className="cities-welcome-text">Click on one of the cities below to see parks, climbing gyms and more!</p>
             <br></br><br></br>
             <div className="container cities-container">
+
             <div className="row cities-row">
                 <div className="col-sm cities-column">
                 {/* Boulder */}

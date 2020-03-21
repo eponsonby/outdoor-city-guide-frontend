@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { signup } from '../actions/currentUser'
+import Modal from "react-bootstrap/Modal"
+
 
 class Signup extends Component {
     state = {
         name: "",
         username: "",
-        password: ""
+        password: "",
+        show: false,
+        setShow: false
     }
 
     handleOnChange = event => {
@@ -31,37 +35,57 @@ class Signup extends Component {
             username: "",
             password: ""
         })
+        this.handleClose()
     }
+  
+    handleClose = () => this.setState({ show: false})
+    handleShow = () => this.setState({ show: true})
+
 
     render() {
         return (
-            <form onSubmit={(event) => this.handleOnSubmit(event)}>
-                <input
-                placeholder="name"
-                value={this.state.name}
-                name="name"
-                type="text"
-                onChange={(event) => this.handleOnChange(event)}
-                />
-                
-                <input
-                placeholder="username"
-                value={this.state.username}
-                name="username"
-                type="text"
-                onChange={(event) => this.handleOnChange(event)}
-                />
+        <>
+        <button type="button" className="btn btn-primary" onClick={this.handleShow}>Sign up</button>
+        <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header>
+            <Modal.Title>Sign up</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+          <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                            <input
+                            placeholder="name"
+                            value={this.state.name}
+                            name="name"
+                            type="text"
+                            onChange={(event) => this.handleOnChange(event)}
+                            />
+                            
+                            <input
+                            placeholder="username"
+                            value={this.state.username}
+                            name="username"
+                            type="text"
+                            onChange={(event) => this.handleOnChange(event)}
+                            />
 
-                <input
-                placeholder="password"
-                value={this.state.password}
-                name="password"
-                type="password"
-                onChange={(event) => this.handleOnChange(event)}
-                />
+                            <input
+                            placeholder="password"
+                            value={this.state.password}
+                            name="password"
+                            type="password"
+                            onChange={(event) => this.handleOnChange(event)}
+                            />
+                            <input type="submit" value="Sign Up"/>
+                        </form>
+          </Modal.Body>
+          <Modal.Footer>
+            <button onClick={this.handleClose}>Close</button>
+            <button onClick={this.handleOnSubmit}>Submit</button>
+          </Modal.Footer>
+        </Modal>
+      </>
+            
 
-                <input type="submit" value="Sign Up"/>
-            </form>
         )
     }
 }

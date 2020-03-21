@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Logout from './Logout'
+import Login from './Login'
+import Signup from './Signup'
+
 import { Link } from 'react-router-dom'
 import Home from './Home'
 
 class Navbar extends Component {
+    
 
     render() {
         return (
@@ -16,7 +20,7 @@ class Navbar extends Component {
                     <div className="collapse navbar-collapse" id="navbarText">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item active">
-                                <a className="nav-link" href="/cities">Home<span className="sr-only">(current)</span></a>
+                                <a className="nav-link" href="/">Home<span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="/cities" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,7 +36,10 @@ class Navbar extends Component {
                             </div>
                             </li>
                             <li className="nav-item">
-                                {this.props.loggedIn? <Logout/> : <Home/> }
+                                {this.props.loggedIn? <Logout/> : <a className="nav-link" href="/login">Login<span className="sr-only"></span></a> }
+                            </li>
+                            <li className="nav-item">
+                                {this.props.loggedIn? null: <Signup/>}
                             </li>
                         </ul>
                     </div>

@@ -32,7 +32,7 @@ export const login = (credentials, history) => {
             } else {
                 dispatch(setCurrentUser(user.data))
                 dispatch(getCities())
-                history.push('/cities')
+                history.push('/')
             }
         })
         .catch(console.log)
@@ -59,7 +59,7 @@ export const signup = (credentials, history) => {
             } else {
                 dispatch(setCurrentUser(user.data))
                 dispatch(getCities())
-                history.push('/cities')
+                history.push('/')
             }
         })
         .catch(console.log)
