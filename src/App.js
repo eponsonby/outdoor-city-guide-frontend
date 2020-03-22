@@ -12,6 +12,7 @@ import ClimbingGyms from './components/ClimbingGyms'
 import OutdoorStores from './components/OutdoorStores'
 import { Route, Switch, withRouter} from 'react-router-dom'
 
+
 class App extends React.Component {
   componentDidMount() {
     this.props.getCurrentUser()

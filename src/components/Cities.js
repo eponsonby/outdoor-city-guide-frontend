@@ -24,10 +24,11 @@ class Cities extends React.Component {
     render() {
         return (
             <div>
+                <div className="cities-header-container">
             <h1 className="cities-header">Welcome to The Trailhead</h1>
             <p className="cities-welcome-text">Click on one of the cities below to see parks, climbing gyms and more!</p>
+            </div>
             <div className="container cities-container">
-
             <div className="row cities-row">
                 <div className="col-sm cities-column">
                 {/* Boulder */}
@@ -90,14 +91,17 @@ const mapStateToProps = state => {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return (
-//         {
-//             getCities: () => {
-//                 dispatch(getCities())
-//             }
-//         }
-//     )
-// }
+const mapDispatchToProps = (dispatch) => {
+    return (
+        {
+            loadingCities: () => {
+                dispatch({
+                    type: 'LOADING_CITIES',
+                })
+            }
+        }
+    )
+}
+            
 
-export default withRouter(connect(mapStateToProps)(Cities))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cities))
