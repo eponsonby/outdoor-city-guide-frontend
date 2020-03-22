@@ -5,7 +5,6 @@ import Login from './Login'
 import Signup from './Signup'
 
 import { Link } from 'react-router-dom'
-import Home from './Home'
 
 class Navbar extends Component {
     
@@ -36,7 +35,7 @@ class Navbar extends Component {
                             </div>
                             </li>
                             <li className="nav-item">
-                                {this.props.loggedIn? <Logout/> : <a className="nav-link" href="/login">Login<span className="sr-only"></span></a> }
+                                {this.props.loggedIn? <Logout/> : <Login/>}
                             </li>
                             <li className="nav-item">
                                 {this.props.loggedIn? null: <Signup/>}

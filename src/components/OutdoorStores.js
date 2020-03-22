@@ -19,7 +19,6 @@ class OutdoorStores extends React.Component {
                         <h1 className="city-name">{this.props.city.attributes.name}</h1>
                     </div>
                     <div className="col-sm">
-                        <Navbar/>
                     </div>
                 </div>
                 <div className="row">

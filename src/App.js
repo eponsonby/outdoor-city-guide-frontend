@@ -4,9 +4,9 @@ import { getCurrentUser } from './actions/currentUser'
 import { getCities } from './actions/cities'
 import Login from './components/Login'
 // import Logout from './components/Logout'
+import Navbar from './components/Navbar'
 import Signup from './components/Signup'
 import Cities from './components/Cities'
-import Home from './components/Home'
 import ParksContainer from './components/ParksContainer'
 import ClimbingGyms from './components/ClimbingGyms'
 import OutdoorStores from './components/OutdoorStores'
@@ -23,6 +23,7 @@ class App extends React.Component {
 
     return (
       <div className="container">
+        <Navbar/>
           <Switch>
             <Route exact path='/' component={Cities}/>
             <Route exact path='/login' component={Login}/>
