@@ -11,11 +11,11 @@ class Login extends Component {
     }
 
     handleOnChange = event => {
-        if (event.target.name === "username")
+        if (event.target.id === "username")
             this.setState({
                 username: event.target.value,
             })
-        else if (event.target.name === "password")
+        else if (event.target.id === "password")
             this.setState({
                 password: event.target.value
             })
@@ -38,6 +38,7 @@ class Login extends Component {
 
     render() {
         return (
+        // Login modal
             <>
             <a href="#" className="nav-link" onClick={this.handleShow}>Login</a>
             <Modal show={this.state.show} onHide={this.handleClose}>
@@ -54,7 +55,7 @@ class Login extends Component {
                                         <input
                                             className="form-control"
                                             id="username"
-                                            placeholder="username"
+                                            placeholder="Username"
                                             value={this.state.username}
                                             type="text"
                                             onChange={(event) => this.handleOnChange(event)}
@@ -69,7 +70,7 @@ class Login extends Component {
                                     <input
                                         className="form-control"
                                         id="password"
-                                        placeholder="password"
+                                        placeholder="Password"
                                         value={this.state.password}
                                         type="password"
                                         onChange={(event) => this.handleOnChange(event)}

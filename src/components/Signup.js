@@ -6,21 +6,21 @@ import Modal from "react-bootstrap/Modal"
 
 class Signup extends Component {
     state = {
-        name: "",
         username: "",
+        email: "",
         password: "",
         show: false,
         setShow: false
     }
 
     handleOnChange = event => {
-        if (event.target.name === "name")
+        if (event.target.name === "username")
             this.setState({
-                name: event.target.value,
+                username: event.target.value,
             })
-        else if (event.target.name === "username")
+        else if (event.target.name === "email")
             this.setState({
-                username: event.target.value
+                email: event.target.value
             })
         else if (event.target.name === "password")
             this.setState({
@@ -33,6 +33,7 @@ class Signup extends Component {
         this.props.signup(this.state, this.props.history)
         this.setState({
             username: "",
+            email: "",
             password: ""
         })
         this.handleClose()
@@ -44,11 +45,12 @@ class Signup extends Component {
 
     render() {
         return (
+        // Signup modal
         <>
         <button type="button" className="btn btn-primary" onClick={this.handleShow}>Sign up</button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header>
-            <Modal.Title>Sign up for the Trailhead</Modal.Title>
+            <Modal.Title>Join Trailhead!</Modal.Title>
           </Modal.Header>
           <Modal.Body>
           <form onSubmit={(event) => this.handleOnSubmit(event)}>
@@ -60,9 +62,8 @@ class Signup extends Component {
                             <input
                             className="form-control"
                             placeholder="Username"
-                            id="name"
-                            value={this.state.name}
-                            name="name"
+                            value={this.state.username}
+                            name="username"
                             type="text"
                             onChange={(event) => this.handleOnChange(event)}
                             />
@@ -76,8 +77,8 @@ class Signup extends Component {
                             <input
                             className="form-control"
                             placeholder="Email"
-                            value={this.state.username}
-                            name="username"
+                            value={this.state.email}
+                            name="email"
                             type="text"
                             onChange={(event) => this.handleOnChange(event)}
                             />
