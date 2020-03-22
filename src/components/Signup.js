@@ -52,13 +52,13 @@ class Signup extends Component {
           </Modal.Header>
           <Modal.Body>
           <form onSubmit={(event) => this.handleOnSubmit(event)}>
-              <label htmlFor="name">Username</label>
                 <div className="form-group">
                     <div className="input-group input-group-lg">
                         <div className="input-group-prepend">
                         <span className="input-group-text"><i className="fas fa-user"></i></span>
                         </div>
                             <input
+                            className="form-control"
                             placeholder="Username"
                             id="name"
                             value={this.state.name}
@@ -67,28 +67,42 @@ class Signup extends Component {
                             onChange={(event) => this.handleOnChange(event)}
                             />
                     </div>
-                </div>          
+                </div>
+                <div className="form-group">
+                    <div className="input-group input-group-lg">
+                        <div className="input-group-prepend">
+                        <span className="input-group-text"><i className="fas fa-envelope"></i></span>
+                        </div>         
                             <input
+                            className="form-control"
                             placeholder="Email"
                             value={this.state.username}
                             name="username"
                             type="text"
                             onChange={(event) => this.handleOnChange(event)}
                             />
-
+                    </div>
+                </div>
+                <div className="form-group">
+                    <div className="input-group input-group-lg">
+                        <div className="input-group-prepend">
+                        <span className="input-group-text"><i className="fas fa-key"></i></span>
+                        </div>         
                             <input
+                            className="form-control"
                             placeholder="Password"
                             value={this.state.password}
                             name="password"
                             type="password"
                             onChange={(event) => this.handleOnChange(event)}
                             />
-                            {/* <input type="submit" value="Sign Up"/> */}
-                        </form>
+                    </div>
+                </div>
+            </form>
           </Modal.Body>
           <Modal.Footer>
-            <button onClick={this.handleClose}>Close</button>
-            <button onClick={this.handleOnSubmit}>Submit</button>
+            <button className="btn btn-secondary" onClick={this.handleClose}>Close</button>
+            <button className="btn btn-secondary" onClick={this.handleOnSubmit}>Submit</button>
           </Modal.Footer>
         </Modal>
       </>

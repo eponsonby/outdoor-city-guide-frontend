@@ -46,7 +46,6 @@ class Login extends Component {
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={(event) => this.handleOnSubmit(event)}>
-                        <label htmlFor="username">Username</label>
                             <div className="form-group">
                                 <div className="input-group input-group-lg">
                                     <div className="input-group-prepend">
@@ -62,7 +61,6 @@ class Login extends Component {
                                             />
                                 </div>
                             </div>
-                        <label htmlFor="password">Password</label>
                             <div className="form-group">
                                 <div className="input-group input-group-lg">
                                     <div className="input-group-prepend">
