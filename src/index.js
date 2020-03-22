@@ -10,7 +10,9 @@ import thunk from 'redux-thunk'
 import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from './store'
 import { BrowserRouter } from 'react-router-dom'
-import Loader from 'react-loader-spinner';
+// import Loader from 'react-loader-spinner';
+import { css } from "@emotion/core";
+import DotLoader from "react-spinners/DotLoader";
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
@@ -28,7 +30,7 @@ const LoadingIndicator = props => {
         alignItems: "center"
       }}
     >
-      <Loader type="ThreeDots" color="#2BAD60" height="100" width="100" />
+      <DotLoader />
     </div>
     </div>
 };

@@ -1,3 +1,5 @@
+import { trackPromise } from 'react-promise-tracker'
+
 export const setLocalParks = localParks => {
     return {
         type: "SET_LOCAL_PARKS",
@@ -58,7 +60,7 @@ const getUrls = (data) => {
     return async dispatch => {
             let parkData = await Promise.all (
                 urls.map(async url => {
-                    let response = await fetch(url)
+                    let response = await trackPromise(fetch(url))
                     return response.json()
                 })
             )
