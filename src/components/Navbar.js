@@ -4,20 +4,18 @@ import Logout from './Logout'
 import Login from './Login'
 import Signup from './Signup'
 
-import { Link } from 'react-router-dom'
-
 class Navbar extends Component {
     
 
     render() {
         return (
-            <div className="main-navbar">
+            <div className="main-navbar-container">
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarText">
-                        <ul className="navbar-nav mr-auto">
+                        <ul className="navbar-nav ml-auto">
                             <li className="nav-item active">
                                 <a className="nav-link" href="/">Home<span className="sr-only">(current)</span></a>
                             </li>

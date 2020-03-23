@@ -24,10 +24,14 @@ class Cities extends React.Component {
     render() {
         return (
             <div>
-                <div className="cities-header-container">
-            <h1 className="cities-header">Welcome to The Trailhead</h1>
-            <p className="cities-welcome-text">Click on one of the cities below to see parks, climbing gyms and more!</p>
-            </div>
+                <div className="jumbotron">
+                    <h1 className="display-4 cities-header">Welcome to The Trailhead!</h1>
+                    <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <hr className="my-4"></hr>
+                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                    <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                </div>
+
             <div className="container cities-container">
             <div className="row cities-row">
                 <div className="col-sm cities-column">

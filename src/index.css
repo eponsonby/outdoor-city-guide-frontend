@@ -21,8 +21,8 @@ code {
   text-align: center;
 }
 
-.main-navbar {
-  float: right;
+.main-navbar-container {
+
 }
 
 .cities-row{
@@ -77,10 +77,6 @@ code {
   padding-top: 20px;
 }
 
-
-.cities-header-container {
-  clear: right;
-}
 
 /* .spinner {
   width: "100%",
