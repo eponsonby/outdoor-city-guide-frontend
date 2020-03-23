@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import { getCities } from './actions/cities'
 import Login from './components/Login'
-// import Logout from './components/Logout'
 import Navbar from './components/Navbar'
 import Signup from './components/Signup'
 import Cities from './components/Cities'
 import ParksContainer from './components/ParksContainer'
 import ClimbingGyms from './components/ClimbingGyms'
+import CitiesHomePage from './components/CitiesHomePage'
 import OutdoorStores from './components/OutdoorStores'
 import { Route, Switch, withRouter} from 'react-router-dom'
 
@@ -29,6 +29,12 @@ class App extends React.Component {
             <Route exact path='/' component={Cities}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/signup' render={(props) => <Signup history={props.history}/>}/>
+            <Route exact path='/cities/:id'
+            render={(props) => {
+                let city = this.props.cities.data.length > 0 ? this.props.cities.data.find(city => city.id === props.match.params.id) : null
+                return city !== null ? <CitiesHomePage city={city}/> : <p>Error</p>
+              }
+            }/>
             <Route exact path='/cities/:id/parks'
             render={(props) => {
                 let city = this.props.cities.data.length > 0 ? this.props.cities.data.find(city => city.id === props.match.params.id) : null

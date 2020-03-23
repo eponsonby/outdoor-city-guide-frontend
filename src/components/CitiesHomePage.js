@@ -1,4 +1,12 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 
+class CitiesHomePage extends React.Component {
+
+    render() {
+        return (
+        <div>This is the cities home page</div>
+        )
+    }
+
+}
+export default CitiesHomePage

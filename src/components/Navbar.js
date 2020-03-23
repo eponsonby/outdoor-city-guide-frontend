@@ -24,12 +24,12 @@ class Navbar extends Component {
                                 Cities
                                 </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="/cities/1/parks">Boulder</a>
-                            <a className="dropdown-item" href="/cities/2/parks">Seattle</a>
-                            <a className="dropdown-item" href="/cities/3/parks">Reno</a>
-                            <a className="dropdown-item" href="/cities/4/parks">Portland</a>
-                            <a className="dropdown-item" href="/cities/5/parks">Asheville</a>
-                            <a className="dropdown-item" href="/cities/6/parks">Salt Lake City</a>
+                            <a className="dropdown-item" href="/cities/1">Boulder</a>
+                            <a className="dropdown-item" href="/cities/2">Seattle</a>
+                            <a className="dropdown-item" href="/cities/3">Reno</a>
+                            <a className="dropdown-item" href="/cities/4">Portland</a>
+                            <a className="dropdown-item" href="/cities/5">Asheville</a>
+                            <a className="dropdown-item" href="/cities/6">Salt Lake City</a>
                             </div>
                             </li>
                             <li className="nav-item">

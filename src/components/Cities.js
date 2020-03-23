@@ -16,7 +16,7 @@ class Cities extends React.Component {
         if (this.props.cities.loading === true) {
             return []
         } else {
-            return this.props.cities.data.map(city => <p key={city.id}><Link className="text-white" to={`/cities/${city.id}/parks`}>{city.attributes.name}</Link></p>)
+            return this.props.cities.data.map(city => <p key={city.id}><Link className="text-white" to={`/cities/${city.id}`}>{city.attributes.name}</Link></p>)
         }
     }
 
