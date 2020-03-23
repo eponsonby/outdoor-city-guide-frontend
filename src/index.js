@@ -14,20 +14,24 @@ import { BrowserRouter } from 'react-router-dom'
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
 
+// Using React Spinners with React Promise Tracker
 const LoadingIndicator = props => {
     const { promiseInProgress } = usePromiseTracker()
     return promiseInProgress &&
     <div>
-    {/* <div className="spinner"
+    <div className="spinner"
       style={{
         width: "100%",
-        height: "100",
+        height: "100%",
         display: "flex",
         justifyContent: "center",
         alignItems: "center"
       }}
-    > */}
-      <DotLoader />
+    >
+      <DotLoader
+        color={"#123abc"}
+       />
+    </div>
     </div>
 };
 

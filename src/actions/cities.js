@@ -13,7 +13,7 @@ export const loadingCities = () => ({
 
 export const getCities = () => {
     return dispatch => {
-      return trackPromise(fetch("http://localhost:3001/api/v1/cities", {
+      return fetch("http://localhost:3001/api/v1/cities", {
         credentials: "include",
         method: "GET",
         headers: {
@@ -29,7 +29,7 @@ export const getCities = () => {
           }
         })
         .catch(console.log)
-      )
+
     }
 
   }
