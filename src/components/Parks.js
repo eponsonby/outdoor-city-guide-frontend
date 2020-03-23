@@ -27,6 +27,7 @@ class Parks extends React.Component {
         return (
 
         <div>
+            <ParksNavbar city={this.props.city}/>
             <div className="container">
                 <div className="row">
                     <div className="col-sm">
@@ -37,7 +38,6 @@ class Parks extends React.Component {
                 </div>
             <div className="row">
                 <div className="col-3">
-                    <ParksNavbar city={this.props.city}/>
                 </div>
                 <div className="col-9">
                 

@@ -84,3 +84,7 @@ code {
   justifyContent: "center",
   alignItems: "center"
 } */
+
+.parks-navbar-container {
+  border: 1px solid red;
+}
