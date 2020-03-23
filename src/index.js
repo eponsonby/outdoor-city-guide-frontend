@@ -1,18 +1,15 @@
 import React from 'react';
 import { usePromiseTracker } from 'react-promise-tracker';
+import DotLoader from "react-spinners/DotLoader";
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-// import store from './store'
 import thunk from 'redux-thunk'
 import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from './store'
 import { BrowserRouter } from 'react-router-dom'
-// import Loader from 'react-loader-spinner';
-import { css } from "@emotion/core";
-import DotLoader from "react-spinners/DotLoader";
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
@@ -21,7 +18,7 @@ const LoadingIndicator = props => {
     const { promiseInProgress } = usePromiseTracker()
     return promiseInProgress &&
     <div>
-    <div className="spinner"
+    {/* <div className="spinner"
       style={{
         width: "100%",
         height: "100",
@@ -29,9 +26,8 @@ const LoadingIndicator = props => {
         justifyContent: "center",
         alignItems: "center"
       }}
-    >
+    > */}
       <DotLoader />
-    </div>
     </div>
 };
 
