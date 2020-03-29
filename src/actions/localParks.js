@@ -42,12 +42,12 @@ const getUrls = (data) => {
     for (let element of data) {
         if (element.type === "facilities") {
                 for (let ids of element.ids)
-                 urlsArray.push(`http://localhost:3001/api/v1/get_local_parks/?type=facilities&id=${ids}`)
+                 urlsArray.push(`https://the-trailhead-api.herokuapp.com/api/v1/get_local_parks/?type=facilities&id=${ids}`)
         }
         
         if (element.type === "recareas") {
             for (let ids of element.ids)
-                urlsArray.push(`http://localhost:3001/api/v1/get_local_parks/?type=recareas&id=${ids}`)
+                urlsArray.push(`https://the-trailhead-api.herokuapp.com/api/v1/get_local_parks/?type=recareas&id=${ids}`)
             }   
     }
     return urlsArray

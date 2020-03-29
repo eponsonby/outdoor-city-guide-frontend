@@ -13,7 +13,7 @@ export const loadingCities = () => ({
 
 export const getCities = () => {
     return dispatch => {
-      return fetch("http://localhost:3001/api/v1/cities", {
+      return fetch("https://the-trailhead-api.herokuapp.com/api/v1/cities", {
         credentials: "include",
         method: "GET",
         headers: {
