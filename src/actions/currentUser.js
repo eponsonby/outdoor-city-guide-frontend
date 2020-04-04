@@ -21,7 +21,8 @@ export const login = (credentials, history) => {
             credentials: "include",
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                'Accept': "application/json"
             },
              body: JSON.stringify(credentials)
         })
@@ -48,7 +49,8 @@ export const signup = (credentials, history) => {
             credentials: "include",
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                'Accept': "application/json"
             },
              body: JSON.stringify(userInfo)
         })
@@ -73,7 +75,6 @@ export const logout = () => {
         dispatch(clearCurrentUser())
         // dispatch(clearCities())
         return fetch('https://the-trailhead-api.herokuapp.com/api/v1/logout', {
-            credentials: "include",
             method: "DELETE",
         })
 
@@ -83,14 +84,12 @@ export const logout = () => {
 export const getCurrentUser = () => {
     return dispatch => {
         return fetch('https://the-trailhead-api.herokuapp.com/api/v1/get_current_user', {
-            mode: "cors",
-            credentials: "include",    
             method: "GET",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                'Accept': "application/json"
             },
         })
-        .then(r => !!console.log('hey there') || r)
         .then(r => r.json())
         .then(response => {
             if (response.error) {
