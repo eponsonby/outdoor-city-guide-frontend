@@ -90,6 +90,7 @@ export const getCurrentUser = () => {
                 "Content-Type": "application/json"
             },
         })
+        .then(r => !!console.log('hey there') || r)
         .then(r => r.json())
         .then(response => {
             if (response.error) {
