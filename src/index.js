@@ -10,6 +10,7 @@ import thunk from 'redux-thunk'
 import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from './store'
 import { BrowserRouter } from 'react-router-dom'
+require('dotenv').config();
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
