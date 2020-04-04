@@ -14,7 +14,7 @@ export const loadingCities = () => ({
 export const getCities = () => {
     return dispatch => {
       return fetch("https://the-trailhead-api.herokuapp.com/api/v1/cities", {
-        mode: 'no-cors',
+        mode: "no-cors",
         credentials: "include",
         method: "GET",
         headers: {
