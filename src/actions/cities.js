@@ -16,9 +16,11 @@ export const getCities = () => {
       return fetch("https://the-trailhead-api.herokuapp.com/api/v1/cities", {
         mode: "cors",
         credentials: "include",
+        
         method: "GET",
         headers: {
-          "Content-Type": "application/json"
+            'Content-Type': "application/json",
+            'Accept': "application/json"
         },
       })
         .then(r => r.json())
