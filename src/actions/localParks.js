@@ -60,7 +60,12 @@ const getUrls = (data) => {
     return async dispatch => {
             let parkData = await Promise.all (
                 urls.map(async url => {
-                    let response = await trackPromise(fetch(url))
+                    let response = await trackPromise(fetch(url, {
+                        headers: {
+                            "Content-Type": "application/json",
+                            'Accept': "application/json"
+                        }
+                    }))
                     return response.json()
                 })
             )

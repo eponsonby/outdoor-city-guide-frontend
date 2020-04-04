@@ -11,7 +11,12 @@ export const setNationalParks = parks => {
   export const getNationalParks = () => {
     return async dispatch => {
         try {
-            const res = await trackPromise(fetch('https://the-trailhead-api.herokuapp.com/api/v1/get_parks'))
+            const res = await trackPromise(fetch('https://the-trailhead-api.herokuapp.com/api/v1/get_parks', {
+                headers: {
+                    "Content-Type": "application/json",
+                    'Accept': "application/json"
+                } 
+            }))
             if (!res.ok) {
                 throw res
             }
