@@ -24,6 +24,7 @@ class App extends React.Component {
 
     return (
       <div className="container">
+        FUCK YOUUUUUUU
         <Navbar/>
           <Switch>
             <Route exact path='/' component={Cities}/>
@@ -80,7 +81,5 @@ const mapDispatchToProps = (dispatch) => {
       }
   )
 }
-
-
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

@@ -83,7 +83,7 @@ export const logout = () => {
 
 export const getCurrentUser = () => {
     return dispatch => {
-        return fetch('https://the-trailhead-api.herokuapp.com/api/v1/get_current_user', {
+        return fetch(process.env.REACT_APP_API_CURRENT_USER, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

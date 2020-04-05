@@ -1,4 +1,4 @@
-import { trackPromise } from 'react-promise-tracker'
+// import { trackPromise } from 'react-promise-tracker'
 
 export const setCities = cities => {
     return {
@@ -13,7 +13,7 @@ export const loadingCities = () => ({
 
 export const getCities = () => {
     return dispatch => {
-      return fetch(API_URL + "/api/v1/cities", {
+      return fetch(process.env.REACT_APP_API_CITIES, {
         method: "GET",
         headers: {
             'Content-Type': "application/json",
