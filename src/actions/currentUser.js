@@ -17,7 +17,7 @@ export const clearCurrentUser = () => {
 // async action creators
 export const login = (credentials, history) => {
     return dispatch => {
-        return fetch('https://the-trailhead-api.herokuapp.com/api/v1/login', {
+        return fetch(process.env.REACT_APP_API_URL + "/api/v1/login", {
             credentials: "include",
             method: "POST",
             headers: {
@@ -45,7 +45,7 @@ export const signup = (credentials, history) => {
         const userInfo = {
             user: credentials
         }
-        return fetch('https://the-trailhead-api.herokuapp.com/api/v1/signup', {
+        return fetch(process.env.REACT_APP_API_URL + '/api/v1/signup', {
             credentials: "include",
             method: "POST",
             headers: {
@@ -74,7 +74,7 @@ export const logout = () => {
     return dispatch => {
         dispatch(clearCurrentUser())
         // dispatch(clearCities())
-        return fetch('https://the-trailhead-api.herokuapp.com/api/v1/logout', {
+        return fetch(process.env.REACT_APP_API_URL + '/api/v1/logout', {
             method: "DELETE",
         })
 
@@ -83,7 +83,7 @@ export const logout = () => {
 
 export const getCurrentUser = () => {
     return dispatch => {
-        return fetch(process.env.REACT_APP_API_CURRENT_USER, {
+        return fetch(process.env.REACT_APP_API_URL + '/api/v1/get_current_user', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

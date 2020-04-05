@@ -24,7 +24,6 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        FUCK YOUUUUUUU
         <Navbar/>
           <Switch>
             <Route exact path='/' component={Cities}/>
