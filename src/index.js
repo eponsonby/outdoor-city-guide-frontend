@@ -29,7 +29,7 @@ const LoadingIndicator = props => {
       }}
     >
       <DotLoader
-        color={"#123abc"}
+        color={"#008CBA"}
        />
     </div>
     </div>

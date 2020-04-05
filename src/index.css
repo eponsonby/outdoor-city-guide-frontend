@@ -85,6 +85,35 @@ code {
   alignItems: "center"
 } */
 
-.parks-navbar-container {
-  border: 1px solid red;
+
+.lead {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* .jumbotron {
+  background-color: #A5C4BC !important;
+} */
+
+.btn-primary {
+  background-color: #008CBA !important;
+  border: 1px solid #008CBA !important;
+}
+
+.card-deck {
+  margin-top: 40px;
+}
+
+.dropdown .dropdown-menu .dropdown-item:active {
+  background-color: #008CBA !important;
+  color: white !important;
+}
+
+a:hover {
+  color: #008CBA;
+  text-decoration: none;
+}
+
+a {
+  color: black;
 }
