@@ -16,14 +16,14 @@ class OutdoorStores extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-sm">
-                        <h1 className="city-name">{this.props.city.attributes.name}</h1>
+                    <a className="city-name" href={`/cities/${this.props.city.id}`}>{this.props.city.attributes.name}</a>
                     </div>
                     <div className="col-sm">
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-sm">
-                        <ParksNavbar city={this.props.city}/>
+                        
                     </div>
                     <div className="col-sm">
                         {this.getOutdoorStoresInfo().slice(0,4)}

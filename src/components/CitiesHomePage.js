@@ -11,7 +11,7 @@ class CitiesHomePage extends React.Component {
                     <div className="card-body">
                         <h5 className="card-title">Parks</h5>
                         <p className="card-text">Ready to spend some quality time outside? Explore nearby local and national parks. </p>
-                        <a href="#" className="btn btn-primary">See Parks</a>
+                        <a href={`/cities/${this.props.city.id}/parks`} className="btn btn-primary">See Parks</a>
                     </div>
             </div>
 
@@ -20,7 +20,7 @@ class CitiesHomePage extends React.Component {
                     <div className="card-body">
                         <h5 className="card-title">Outdoor Stores</h5>
                         <p className="card-text">Get geared up at one of the local outdoor shops.</p>
-                        <a href="#" className="btn btn-primary">See Outdoor Stores</a>
+                        <a href={`/cities/${this.props.city.id}/outdoor-stores`} className="btn btn-primary">See Outdoor Stores</a>
                     </div>
             </div>
 
@@ -29,7 +29,7 @@ class CitiesHomePage extends React.Component {
                     <div className="card-body">
                         <h5 className="card-title">Climbing Gyms</h5>
                         <p className="card-text">Can't get to the crag? Visit a nearby indoor climbing gym.</p>
-                        <a href="#" className="btn btn-primary">See Climbing Gyms</a>
+                        <a href={`/cities/${this.props.city.id}/climbing-gyms`} className="btn btn-primary">See Climbing Gyms</a>
                     </div>
             </div>
             </div>

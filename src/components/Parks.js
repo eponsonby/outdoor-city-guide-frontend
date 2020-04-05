@@ -27,11 +27,10 @@ class Parks extends React.Component {
         return (
 
         <div>
-            <ParksNavbar city={this.props.city}/>
             <div className="container">
                 <div className="row">
                     <div className="col-sm">
-                        <h1 className="city-name">{this.props.city.attributes.name}</h1>
+                    <a className="city-name" href={`/cities/${this.props.city.id}`}>{this.props.city.attributes.name}</a>
                     </div>
                     <div className="col-sm">
                     </div>
