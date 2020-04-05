@@ -39,7 +39,7 @@ class Cities extends React.Component {
                 <div className="centered-text">
                     {this.linkedCityNames().slice(0,1)}
                 </div>
-                <img className="city-pic" src='boulder.jpg' alt="Boulder"></img>
+                <img className="city-pic" src='/boulder.jpg' alt="Boulder"></img>
                 </div>
                 <div className="col-sm cities-column">
                 {/* Seattle */}
