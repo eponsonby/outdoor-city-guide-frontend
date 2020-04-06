@@ -1,8 +1,14 @@
 import React from 'react'
 import ParksNavbar from './ParksNavbar'
 import Navbar from './Navbar'
+import { getOutdoorStores } from '../actions/outdoorStores'
+import { connect } from 'react-redux'
 
 class OutdoorStores extends React.Component {
+
+    componentDidMount() {
+        this.props.getOutdoorStores(this.props.city.attributes.name)
+    }
 
     getOutdoorStoresInfo = function() {
         const outdoorStoresFromState = this.props.city.attributes.outdoor_stores
@@ -38,5 +44,21 @@ class OutdoorStores extends React.Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        outdoorStores: state.outdoorStores
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return (
+        {
+            getOutdoorStores: (city) => {
+                dispatch(getOutdoorStores(city))
+            }
+        }
+    )
+}
+
     
-export default OutdoorStores
+export default connect(mapStateToProps, mapDispatchToProps)(OutdoorStores)
