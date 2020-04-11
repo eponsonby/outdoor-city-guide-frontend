@@ -18,11 +18,8 @@ const getStoreIds = (city) => {
                 "GLbVRaeuuWLqj_Ef2La-kw",
                 "pqW5dIZFoBsqA1LENQmOow",
                 "HxJsDfVHTsx0081cvqguHw",
-                "5QXQv1C7HDgMA38VYPrs5w",
-                "PXgSimQeRau3PkaRplGFvw",
-                // "lpS1TedM7BR-r2DzeA2MYA",
-                // "KlipvAMuvybbCSjGvNmbmA",
-                // "EfylzvvNYBuYAYjSXZF0lw"
+                "lpS1TedM7BR-r2DzeA2MYA",
+                "KlipvAMuvybbCSjGvNmbmA",
             ]},
         ]
     // case "Portland":
