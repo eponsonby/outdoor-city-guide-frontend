@@ -31,14 +31,15 @@ class OutdoorStores extends React.Component {
         if (this.props.outdoorStores !== null) {
             let outdoorStores = this.props.outdoorStores.map(outdoorStore =>
             <div key={outdoorStore.name}>
-            <div className="col mb-4">
-                        <div className="card">
-                            <img src={outdoorStore.image_url} class="card-img-top" alt="..."></img>
+            <div className="col mb-4 mt-2">
+                        <div className="card h-150">
+                            <img src={outdoorStore.image_url} height="250" className="card-img-top" alt="..."></img>
                             <div className="card-body">
-                                <h5 className="card-title"><a className="outdoor-store-name text-decoration-none" target="_blank" href={outdoorStore.url}>{outdoorStore.name}</a></h5>
-                                <p className="card-text">{outdoorStore.location.display_address.map(location => <p>{location}</p>)}</p>
-                                <p>{this.mapRatingPhotos(outdoorStore.rating)}</p>
-                                <p>{outdoorStore.price}</p>
+                                <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" href={outdoorStore.url}>{outdoorStore.name}</a></h5>
+                                <p className="card-text number-of-reviews">{this.mapRatingPhotos(outdoorStore.rating)}  {outdoorStore.review_count} reviews</p>
+                                <p className="card-text location">{outdoorStore.location.display_address.map(location => <p>{location}</p>)}</p>
+                                <p className="card-text price">{outdoorStore.price}</p>
+                                <img src="/yelp_logo.png"></img>
                             </div>
                         </div>
             </div>

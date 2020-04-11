@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-
 .navbar {
   font-size: 15px;
 }
@@ -21,9 +20,6 @@ code {
   text-align: center;
 }
 
-.main-navbar-container {
-
-}
 
 .cities-row{
   margin-top: 25px;
@@ -54,17 +50,17 @@ code {
 
 /* components/OutdoorStores.js */
 
-.outdoor-store-name, .park-name {
+.park-name {
   font-size: 17px;
   font-weight: bold;
   color: black;
 }
 
-.outdoor-store-name:hover, .park-name:hover{
+.park-name:hover{
   color: grey;
 }
 
-.outdoor-store-name:visited, .park-name:visited{
+.park-name:visited{
   color: black;
 }
 
@@ -117,4 +113,22 @@ a:hover {
 
 a {
   color: black;
+}
+
+.location, .price {
+  line-height: 5px;
+  padding-top: 10px;
+}
+
+.number-of-reviews {
+  line-height: 1px;
+  color: gray;
+}
+
+.outdoor-store-name {
+  color: #008CBA;
+}
+
+.link-icon {
+  font-size: 15px;
 }
