@@ -31,10 +31,17 @@ class OutdoorStores extends React.Component {
         if (this.props.outdoorStores !== null) {
             let outdoorStores = this.props.outdoorStores.map(outdoorStore =>
             <div key={outdoorStore.name}>
-            <a className="outdoor-store-name text-decoration-none" target="_blank" href={outdoorStore.url}>{outdoorStore.name}</a>
-            <p>{outdoorStore.location.display_address.map(location => <p>{location}</p>)}</p>
-            <p>{this.mapRatingPhotos(outdoorStore.rating)}</p>
-            <p>{outdoorStore.price}</p>
+            <div className="col mb-4">
+                        <div className="card">
+                            <img src={outdoorStore.image_url} class="card-img-top" alt="..."></img>
+                            <div className="card-body">
+                                <h5 className="card-title"><a className="outdoor-store-name text-decoration-none" target="_blank" href={outdoorStore.url}>{outdoorStore.name}</a></h5>
+                                <p className="card-text">{outdoorStore.location.display_address.map(location => <p>{location}</p>)}</p>
+                                <p>{this.mapRatingPhotos(outdoorStore.rating)}</p>
+                                <p>{outdoorStore.price}</p>
+                            </div>
+                        </div>
+            </div>
             </div>)
             return outdoorStores
         } else {
@@ -48,54 +55,9 @@ class OutdoorStores extends React.Component {
             <div>
                 <a className="city-name" href={`/cities/${this.props.city.id}`}>{this.props.city.attributes.name}</a>
                 <div className="row row-cols-1 row-cols-md-3">
-                    <div className="col mb-4">
-                        <div className="card">
-                            {/* <img src="..." class="card-img-top" alt="..."> */}
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col mb-4">
-                        <div class="card">
-                            {/* <img src="..." class="card-img-top" alt="..."> */}
-                            <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                             </div>
-                        </div>
-                    </div>
-                    <div className="col mb-4">
-                        <div class="card">
-                            {/* <img src="..." class="card-img-top" alt="..."> */}
-                            <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col mb-4">
-                        <div class="card">
-                            {/* <img src="..." class="card-img-top" alt="..."> */}
-                            <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col mb-4">
-                        <div class="card">
-                            {/* <img src="..." class="card-img-top" alt="..."> */}
-                            <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                        </div>
-                    </div>
+                    {this.mapOutdoorStores()}
                 </div>
             </div>
-
         )
     }
 }
