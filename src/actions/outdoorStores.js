@@ -7,6 +7,7 @@ export const setOutdoorStores = outdoorStores => {
     }
 }
 
+// Get store Yelp ids
 const getStoreIds = (city) => {
     switch (city) {
     // case "Boulder":
@@ -19,9 +20,9 @@ const getStoreIds = (city) => {
                 "HxJsDfVHTsx0081cvqguHw",
                 "5QXQv1C7HDgMA38VYPrs5w",
                 "PXgSimQeRau3PkaRplGFvw",
-                "lpS1TedM7BR-r2DzeA2MYA",
-                "KlipvAMuvybbCSjGvNmbmA",
-                "EfylzvvNYBuYAYjSXZF0lw"
+                // "lpS1TedM7BR-r2DzeA2MYA",
+                // "KlipvAMuvybbCSjGvNmbmA",
+                // "EfylzvvNYBuYAYjSXZF0lw"
             ]},
         ]
     // case "Portland":
@@ -41,33 +42,34 @@ const getStoreIds = (city) => {
     }
 }
 
+// get urls of stores to fetch
 const getUrls = (data) => {
     let urlsArray = []
     for (let element of data) {
-        for (let ids of element.ids)
-            urlsArray.push(process.env.REACT_APP_API_URL + `/api/v1/get_outdoor_stores/?id=${ids}`)
+        for (let id of element.ids)
+            urlsArray.push(process.env.REACT_APP_API_URL + `/api/v1/get_outdoor_stores/?id=${id}`)
         }
     return urlsArray
 }
 
-export const getOutdoorStores = (outdoorStore) => {
-    const storeData = getStoreIds(outdoorStore)
-    const urls = getUrls(storeData)
+// Map over the urls, do a fetch request for each
+export const getOutdoorStores = (city) => {
+    const storeIds = getStoreIds(city)
+    const urls = getUrls(storeIds)
 
-  return async dispatch => {
-          let storeData = await Promise.all (
-              urls.map(async url => {
-                  let response = await trackPromise(fetch(url, {
-                      headers: {
-                          "Content-Type": "application/json",
-                          'Accept': "application/json"
-                      }
-                  }))
-                  return response.json()
-              })
-          )
-          dispatch(setOutdoorStores(storeData))
-     
+    return async dispatch => {
+        let storeData = await Promise.all (
+            urls.map(async url => {
+                let response = await trackPromise(fetch(url, {
+                    headers: {
+                        "Content-Type": "application/json",
+                        'Accept': "application/json"
+                    }
+                }))
+                return response.json()
+            })
+        )
+        dispatch(setOutdoorStores(storeData))
   }
   
 }

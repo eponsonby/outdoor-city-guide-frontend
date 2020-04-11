@@ -1,21 +1,48 @@
 import React from 'react'
-import ParksNavbar from './ParksNavbar'
-import Navbar from './Navbar'
-import { getOutdoorStores } from '../actions/outdoorStores'
-import { connect } from 'react-redux'
 
 class OutdoorStores extends React.Component {
-
-    componentDidMount() {
-        this.props.getOutdoorStores(this.props.city.attributes.name)
-    }
-
-    getOutdoorStoresInfo = function() {
-        const outdoorStoresFromState = this.props.city.attributes.outdoor_stores
-        const outdoorStoresText = outdoorStoresFromState.map(os => <div className="row"><p><a className="outdoor-store-name text-decoration-none" href={os.url} target="_blank" rel="noopener noreferrer">{os.name}</a><br></br>{os.street}<br></br>{os.city.name}, {os.state}<br></br>{os.zip}</p></div>)
-        return outdoorStoresText
-    }
     
+    mapRatingPhotos = (rating) => {
+    const imageBaseUrl = "/yelp_stars/web_and_ios/regular/regular_"
+        switch (rating) {
+            case 0:
+            return <img src={imageBaseUrl + "0.png"}></img>
+            case 1:
+            return <img src={imageBaseUrl + "1.png"}></img>
+            case 1.5:
+            return <img src={imageBaseUrl + "1_half.png"}></img>
+            case 2:
+            return <img src={imageBaseUrl + "2.png"}></img>
+            case 2.5:
+            return <img src={imageBaseUrl + "2_half.png"}></img>
+            case 3:
+            return <img src={imageBaseUrl + "3.png"}></img>
+            case 3.5:
+            return <img src={imageBaseUrl + "3_half.png"}></img>
+            case 4:
+            return <img src={imageBaseUrl + "4.png"}></img>
+            case 4.5:
+            return <img src={imageBaseUrl + "4_half.png"}></img>
+            case 5:
+            return <img src={imageBaseUrl + "5_half.png"}></img>
+    }
+}
+    mapOutdoorStores = () => {
+        if (this.props.outdoorStores !== null) {
+            let outdoorStores = this.props.outdoorStores.map(outdoorStore =>
+            <div key={outdoorStore.name}>
+            <a className="outdoor-store-name text-decoration-none" target="_blank" href={outdoorStore.url}>{outdoorStore.name}</a>
+            <p>{outdoorStore.location.display_address.map(location => <p>{location}</p>)}</p>
+            <p>{this.mapRatingPhotos(outdoorStore.rating)}</p>
+            <p>{outdoorStore.price}</p>
+            </div>)
+            return outdoorStores
+        } else {
+            return null
+        }
+    }
+
+
     render() {
         return (
             <div>
@@ -32,10 +59,11 @@ class OutdoorStores extends React.Component {
                         
                     </div>
                     <div className="col-sm">
-                        {this.getOutdoorStoresInfo().slice(0,4)}
+                        {this.mapOutdoorStores()}
+                        {/* {this.getOutdoorStoresInfo().slice(0,4)} */}
                     </div>
                     <div className="col-sm">
-                        {this.getOutdoorStoresInfo().slice(4)}
+                        {/* {this.getOutdoorStoresInfo().slice(4)} */}
                     </div>
                 </div>
             </div>
@@ -44,21 +72,4 @@ class OutdoorStores extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        outdoorStores: state.outdoorStores
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return (
-        {
-            getOutdoorStores: (city) => {
-                dispatch(getOutdoorStores(city))
-            }
-        }
-    )
-}
-
-    
-export default connect(mapStateToProps, mapDispatchToProps)(OutdoorStores)
+export default OutdoorStores
