@@ -24,7 +24,7 @@ class OutdoorStores extends React.Component {
             case 4.5:
             return <img src={imageBaseUrl + "4_half.png"}></img>
             case 5:
-            return <img src={imageBaseUrl + "5_half.png"}></img>
+            return <img src={imageBaseUrl + "5.png"}></img>
     }
 }
     mapOutdoorStores = () => {
