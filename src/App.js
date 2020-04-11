@@ -7,7 +7,7 @@ import Navbar from './components/Navbar'
 import Signup from './components/Signup'
 import Cities from './components/Cities'
 import ParksContainer from './components/ParksContainer'
-import ClimbingGyms from './components/ClimbingGyms'
+import ClimbingGymsContainer from './components/ClimbingGymsContainer'
 import CitiesHomePage from './components/CitiesHomePage'
 import OutdoorStoresContainer from './components/OutdoorStoresContainer'
 import { Route, Switch, withRouter} from 'react-router-dom'
@@ -44,7 +44,7 @@ class App extends React.Component {
             <Route exact path='/cities/:id/climbing-gyms'
             render={(props) => {
               let city = this.props.cities.data.length > 0 ? this.props.cities.data.find(city => city.id === props.match.params.id) : null
-              return city !== null ? <ClimbingGyms city={city}/> : <p>Error</p>
+              return city !== null ? <ClimbingGymsContainer city={city}/> : <p>Error</p>
               }
             }/>
             <Route exact path='/cities/:id/outdoor-stores'

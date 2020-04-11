@@ -69,8 +69,7 @@ const getStoreIds = (city) => {
                 "MpFhTRKvKWA-io6Mmm3ndg",
                 "iKqtbRiYulV14gNB_042Ow",
             ]}
-        ]   
-    
+        ] 
     
     default:
         return "Error in Outdoor Stores Action"

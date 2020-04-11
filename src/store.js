@@ -4,6 +4,7 @@ import citiesReducer from './reducers/cities'
 import parksReducer from './reducers/parks'
 import localParksReducer from './reducers/localParks'
 import outdoorStoresReducer from './reducers/outdoorStores'
+import climbingGymsReducer from './reducers/climbingGyms'
 import { combineReducers } from 'redux'
 
 const reducer = combineReducers({
@@ -12,7 +13,8 @@ const reducer = combineReducers({
     cities: citiesReducer,
     parks: parksReducer,
     localParks: localParksReducer,
-    outdoorStores: outdoorStoresReducer
+    outdoorStores: outdoorStoresReducer,
+    climbingGyms: climbingGymsReducer
 })
 
 
