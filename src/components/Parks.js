@@ -5,50 +5,140 @@ import Navbar from './Navbar'
 
 class Parks extends React.Component {
     
-    mapNationalParks = () => {
-        if (this.props.nationalParks !== null) {
-            let parks = this.props.nationalParks.map(park => ({description: park.description, name: park.fullName, url: park.url}))
-            return parks.map(park => <div key={park.name}><a className="park-name text-decoration-none" href="/" target="_blank">{park.name}</a><p>{park.description}</p></div>)
-        } else {
-            return null
+    
+    mapParkPhotos = (parkName) => {
+        const imageBaseUrl = "/park_pics/"
+            switch (parkName) {
+                case "Rocky Mountain National Park":
+                    return imageBaseUrl + "rmnp.jpeg"
+                case "Boulder Canyon":
+                    return imageBaseUrl + "boulder-canyon.jpg"
+                case "Mount Evans Wilderness: Arapaho & Roosevelt":
+                    return imageBaseUrl + "mount-evans.jpg"
+                case "El Dorado Canyon":
+                    return imageBaseUrl + "el-dorado.jpg"
+                case "Lake Roosevelt National Recreation Area":
+                    return imageBaseUrl + "lrnra.jpg"
+                case "Mount Rainier National Park":
+                    return imageBaseUrl + "mrnp.jpg"
+                case "North Cascades National Park":
+                    return imageBaseUrl + "ncnp.jpg"
+                case "Olympic National Park":
+                    return imageBaseUrl + "onp.jpg"
+                case "Lake Tahoe - East Shore":
+                    return imageBaseUrl + "lake-tahoe.jpg"
+                case "Adventure Mountain":
+                    return imageBaseUrl + "adventure-mountain.jpg"
+                case "Sand Mountain Recreation Area":
+                    return imageBaseUrl + "sand-mountain.jpg"
+                case "Yosemite National Park":
+                    return imageBaseUrl + "ynp.jpg"
+                case "Mt. Hood National Forest":
+                    return imageBaseUrl + "mount-hood.jpg"
+                case "Columbia River Gorge National Scenic Area":
+                    return imageBaseUrl + "columbia-river-gorge.jpeg"
+                case "Three Sisters Wilderness: Willamette":
+                    return imageBaseUrl + "three-sisters.jpg"
+                case "Crater Lake National Park":
+                    return imageBaseUrl + "clnp.jpg"
+                case "Pisgah National Forest":
+                    return imageBaseUrl + "pisgah.jpg"
+                case "Great Smoky Mountains National Park":
+                    return imageBaseUrl + "gsmnp.jpg"
+                case "French Broad River":
+                    return imageBaseUrl + "french-broad.jpg"               
+                case "Blue Ridge Parkway":
+                    return imageBaseUrl + "blue-ridge.jpg"     
         }
     }
     
-    mapLocalParks = () => {        
-        if (this.props.localParks !== null) {
-            let localParks = this.props.localParks.map(park => <div key={park.name}><a className="park-name text-decoration-none" href="/" target="_blank">{park.name}</a><p>{park.description}</p></div>)
-            return localParks
+    
+    // Create a card on the page for each national park 
+    mapNationalParks = () => {
+        if (this.props.nationalParks !== null) {
+            let parkData = this.props.nationalParks.map(park => ({description: park.description, name: park.fullName, url: park.url}))
+            let parks = parkData.map(park =>
+                <div key={park.name}>
+                <div className="col mb-4 mt-2">
+                            <div className="card h-150">
+                                <img src={this.mapParkPhotos(park.name)} height="250" className="card-img-top" alt="..."></img>
+                                <div className="card-body">
+                                    <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" href={park.url}>{park.name}</a></h5>
+                                    <p className="card-text">{park.description}</p>
+                                    {/* <p className="card-text location">{climbingGym.location.display_address.map(location => <p>{location}</p>)}</p>
+                                    <p className="card-text price">{climbingGym.price}</p> */}
+                                </div>
+                            </div>
+                </div>
+                </div>)
+            return parks
         } else {
             return null
         }
     }
+
+    // truncate local park descriptions, some of them were very long
+    truncateParkDescription = (string, number) => {
+    if (string.length <= number) {
+      return string
+    }
+    return string.slice(0, number) + '...'
+  }
+ 
+    // Create a card on the page for each local park
+    mapLocalParks = () => {
+        if (this.props.localParks !== null) {
+            let parks = this.props.localParks.map(park =>
+                <div key={park.name}>
+                <div className="col mb-4 mt-2">
+                            <div className="card h-150">
+                                <img src={this.mapParkPhotos(park.name)} height="250" className="card-img-top" alt="..."></img>
+                                <div className="card-body">
+                                    <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" href={park.url}>{park.name}</a></h5>
+                                    <p className="card-text">{this.truncateParkDescription(park.description, 399)}</p>
+                                </div>
+                            </div>
+                </div>
+                </div>)
+            return parks
+        } else {
+            return null
+        }
+    }
+
+
+    // Adding this Boulder park manually, no access to their database
+    boulderPark = () => {
+        if (this.props.city.attributes.name == "Boulder") {
+            let park =
+                <div key="El Dorado Canyon">
+                <div className="col mb-4 mt-2">
+                            <div className="card h-150">
+                                <img src={this.mapParkPhotos("El Dorado Canyon")} height="250" className="card-img-top" alt="..."></img>
+                                <div className="card-body">
+                                    <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" href="https://cpw.state.co.us/placestogo/Parks/eldoradocanyon">El Dorado Canyon</a></h5>
+                                    <p className="card-text">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Eldorado Canyon is a hidden treasure right in Boulder’s backyard!  Whether it’s hiking amidst the towering sandstone cliffs, picnicking along scenic South Boulder Creek or climbing Eldo's sheer golden walls, Eldorado Canyon State Park truly has something for everyone!  Discover this hidden jewel and take home memories that will last a lifetime.</p>
+                                </div>
+                            </div>
+                </div>
+                </div>
+            return park
+        } else {
+            return null
+        }
+    }
+
     
     render() {
         return (
-
-        <div>
-            <div className="container">
-                <div className="row">
-                    <div className="col-sm">
-                    <a className="city-name" href={`/cities/${this.props.city.id}`}>{this.props.city.attributes.name}</a>
-                    </div>
-                    <div className="col-sm">
-                    </div>
-                </div>
-            <div className="row">
-                <div className="col-3">
-                </div>
-                <div className="col-9">
-                
-                    <h1>Nearby Parks and Recreation Areas</h1>
-                    <br></br>
+            <div>
+                <a className="city-name" href={`/cities/${this.props.city.id}`}>{this.props.city.attributes.name}</a>
+                <div className="row row-cols-1 row-cols-md-2">
                     {this.mapNationalParks()}
                     {this.mapLocalParks()}
+                    {this.boulderPark()}
                 </div>
             </div>
-        </div>
-        </div>
-
         )
     }
 }

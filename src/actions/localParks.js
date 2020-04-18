@@ -10,7 +10,7 @@ export const setLocalParks = localParks => {
 const getParkTypeAndIds = (city) => {
     switch (city) {
     case "Boulder":
-        return [{type: "facilities", ids: ["250788", "252294", "250790"]}]
+        return [{type: "facilities", ids: ["241294", "250790"]}]
     case "Reno":
         return [
             {type: "facilities", ids: ["239692", "239747"]},
