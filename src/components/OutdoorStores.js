@@ -55,6 +55,8 @@ class OutdoorStores extends React.Component {
         return (
             <div>
                 <a className="city-name" href={`/cities/${this.props.city.id}`}>{this.props.city.attributes.name}</a>
+                <br></br><br></br>
+                <a className="back-button" href={`/cities/${this.props.city.id}`}><i class="fas fa-arrow-left"></i> Back</a>
                 <div className="row row-cols-1 row-cols-md-3">
                     {this.mapOutdoorStores()}
                 </div>

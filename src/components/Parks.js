@@ -1,10 +1,6 @@
 import React from 'react'
-import ParksNavbar from './ParksNavbar'
-import Navbar from './Navbar'
-// import {Link} from 'react-router-dom'
 
 class Parks extends React.Component {
-    
     
     mapParkPhotos = (parkName) => {
         const imageBaseUrl = "/park_pics/"
@@ -65,8 +61,6 @@ class Parks extends React.Component {
                                 <div className="card-body">
                                     <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" href={park.url}>{park.name}</a></h5>
                                     <p className="card-text">{park.description}</p>
-                                    {/* <p className="card-text location">{climbingGym.location.display_address.map(location => <p>{location}</p>)}</p>
-                                    <p className="card-text price">{climbingGym.price}</p> */}
                                 </div>
                             </div>
                 </div>
@@ -133,6 +127,8 @@ class Parks extends React.Component {
         return (
             <div>
                 <a className="city-name" href={`/cities/${this.props.city.id}`}>{this.props.city.attributes.name}</a>
+                <br></br><br></br>
+                <a className="back-button" href={`/cities/${this.props.city.id}`}><i class="fas fa-arrow-left"></i> Back</a>
                 <div className="row row-cols-1 row-cols-md-2">
                     {this.mapNationalParks()}
                     {this.mapLocalParks()}
