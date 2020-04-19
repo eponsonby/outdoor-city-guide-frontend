@@ -20,7 +20,7 @@ class App extends React.Component {
   }
 
   render() {
-    const loggedIn = this.props.loggedIn
+    // const loggedIn = this.props.loggedIn
 
     return (
       <div className="container">

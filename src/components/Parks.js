@@ -53,6 +53,8 @@ class Parks extends React.Component {
                     return imageBaseUrl + "uinta.jpg"
                 case "Antelope Island State Park":
                     return imageBaseUrl + "antelope-island.jpg"
+                default:
+                    return "Error in mapParkPhotos"
         }
     }
     
@@ -67,7 +69,7 @@ class Parks extends React.Component {
                             <div className="card h-150">
                                 <img src={this.mapParkPhotos(park.name)} height="250" className="card-img-top" alt="..."></img>
                                 <div className="card-body">
-                                    <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" href={park.url}>{park.name}</a></h5>
+                                    <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" rel="noopener noreferrer" href={park.url}>{park.name}</a></h5>
                                     <p className="card-text">{park.description}</p>
                                 </div>
                             </div>
@@ -84,7 +86,7 @@ class Parks extends React.Component {
     if (string.length <= number) {
       return string
     }
-    return <p className="card-text">{string.slice(0, number)}<a className='read-more text-decoration-none' target='_blank' href={url}>...</a></p>
+    return <p className="card-text">{string.slice(0, number)}<a className='read-more text-decoration-none' target='_blank' rel="noopener noreferrer" href={url}>...</a></p>
 }
  
     // Create a card on the page for each local park
@@ -96,7 +98,7 @@ class Parks extends React.Component {
                             <div className="card h-150">
                                 <img src={this.mapParkPhotos(park.name)} height="250" className="card-img-top" alt="..."></img>
                                 <div className="card-body">
-                                    <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" href={park.url}>{park.name}</a></h5>
+                                    <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" rel="noopener noreferrer" href={park.url}>{park.name}</a></h5>
                                     {this.truncateParkDescription(park.description, 399, park.url)}
                                 </div>
                             </div>
@@ -111,14 +113,14 @@ class Parks extends React.Component {
 
     // Adding this Boulder park manually, no access to their database
     boulderPark = () => {
-        if (this.props.city.attributes.name == "Boulder") {
+        if (this.props.city.attributes.name === "Boulder") {
             let park =
                 <div key="El Dorado Canyon">
                 <div className="col mb-4 mt-2">
                             <div className="card h-150">
                                 <img src={this.mapParkPhotos("El Dorado Canyon")} height="250" className="card-img-top" alt="..."></img>
                                 <div className="card-body">
-                                    <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" href="https://cpw.state.co.us/placestogo/Parks/eldoradocanyon">El Dorado Canyon</a></h5>
+                                    <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" rel="noopener noreferrer" href="https://cpw.state.co.us/placestogo/Parks/eldoradocanyon">El Dorado Canyon</a></h5>
                                     <p className="card-text">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Eldorado Canyon is a hidden treasure right in Boulder’s backyard!  Whether it’s hiking amidst the towering sandstone cliffs, picnicking along scenic South Boulder Creek or climbing Eldo's sheer golden walls, Eldorado Canyon State Park truly has something for everyone!  Discover this hidden jewel and take home memories that will last a lifetime.</p>
                                 </div>
                             </div>
@@ -136,7 +138,7 @@ class Parks extends React.Component {
             <div>
                 <a className="city-name" href={`/cities/${this.props.city.id}`}>{this.props.city.attributes.name}</a>
                 <br></br><br></br>
-                <a className="back-button" href={`/cities/${this.props.city.id}`}><i class="fas fa-arrow-left"></i> Back</a>
+                <a className="back-button" href={`/cities/${this.props.city.id}`}><i className="fas fa-arrow-left"></i> Back</a>
                 <div className="row row-cols-1 row-cols-md-2">
                     {this.mapNationalParks()}
                     {this.mapLocalParks()}

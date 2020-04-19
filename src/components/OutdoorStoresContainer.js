@@ -11,12 +11,6 @@ class OutdoorStoresContainer extends React.Component {
         this.props.getOutdoorStores(this.props.city.attributes.name)
     }
 
-    // getOutdoorStoresInfo = function() {
-    //     const outdoorStoresFromState = this.props.city.attributes.outdoor_stores
-    //     const outdoorStoresText = outdoorStoresFromState.map(os => <div className="row"><p><a className="outdoor-store-name text-decoration-none" href={os.url} target="_blank" rel="noopener noreferrer">{os.name}</a><br></br>{os.street}<br></br>{os.city.name}, {os.state}<br></br>{os.zip}</p></div>)
-    //     return outdoorStoresText
-    // }
-
        
     getOutdoorStoreInfo = () => {
         const selectedOutdoorStores = this.props.outdoorStores.data.length > 0 ? this.props.outdoorStores : null   

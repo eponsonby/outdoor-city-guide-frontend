@@ -64,22 +64,19 @@ code {
   color: black;
 }
 
-.city-name, .cities-header {
+.city-name, .cities-header, .card-city-name {
   font-family: "Pacifico", cursive;
   font-size: 30px;
+}
+
+.card-city-name, .cities-header {
+  font-size: 33px;
 }
 
 .city-name {
   padding-top: 20px;
 }
 
-
-/* .spinner {
-  width: "100%",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center"
-} */
 
 
 .lead {
