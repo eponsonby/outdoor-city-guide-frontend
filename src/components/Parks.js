@@ -80,12 +80,12 @@ class Parks extends React.Component {
     }
 
     // truncate local park descriptions, some of them were very long
-    truncateParkDescription = (string, number) => {
+    truncateParkDescription = (string, number, url) => {
     if (string.length <= number) {
       return string
     }
-    return string.slice(0, number) + '...'
-  }
+    return <p className="card-text">{string.slice(0, number)}<a className='read-more text-decoration-none' target='_blank' href={url}>...</a></p>
+}
  
     // Create a card on the page for each local park
     mapLocalParks = () => {
@@ -97,7 +97,7 @@ class Parks extends React.Component {
                                 <img src={this.mapParkPhotos(park.name)} height="250" className="card-img-top" alt="..."></img>
                                 <div className="card-body">
                                     <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" href={park.url}>{park.name}</a></h5>
-                                    <p className="card-text">{this.truncateParkDescription(park.description, 399)}</p>
+                                    {this.truncateParkDescription(park.description, 399, park.url)}
                                 </div>
                             </div>
                 </div>

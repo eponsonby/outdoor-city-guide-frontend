@@ -125,10 +125,19 @@ a {
   color: gray;
 }
 
-.outdoor-store-name {
+.outdoor-store-name, .read-more {
   color: #008CBA;
+}
+
+.read-more {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .link-icon {
   font-size: 15px;
+}
+
+.park-description {
+  margin: 0, 0, 10;
 }
