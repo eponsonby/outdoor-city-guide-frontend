@@ -44,7 +44,15 @@ class Parks extends React.Component {
                 case "French Broad River":
                     return imageBaseUrl + "french-broad.jpg"               
                 case "Blue Ridge Parkway":
-                    return imageBaseUrl + "blue-ridge.jpg"     
+                    return imageBaseUrl + "blue-ridge.jpg"
+                case "Capitol Reef National Park":
+                    return imageBaseUrl + "cpnp.jpg"
+                case "Flaming Gorge NRA":
+                    return imageBaseUrl + "flaming-gorge.jpeg"
+                case "Uinta-Wasatch-Cache National Forest":
+                    return imageBaseUrl + "uinta.jpg"
+                case "Antelope Island State Park":
+                    return imageBaseUrl + "antelope-island.jpg"
         }
     }
     
@@ -52,7 +60,7 @@ class Parks extends React.Component {
     // Create a card on the page for each national park 
     mapNationalParks = () => {
         if (this.props.nationalParks !== null) {
-            let parkData = this.props.nationalParks.map(park => ({description: park.description, name: park.fullName, url: park.url}))
+            let parkData = this.props.nationalParks.map(park => ({description: park.description, name: park.name, url: park.url}))
             let parks = parkData.map(park =>
                 <div key={park.name}>
                 <div className="col mb-4 mt-2">

@@ -8,13 +8,13 @@ import Parks from './Parks'
 class ParksContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getNationalParks()
+        this.props.getNationalParks(this.props.city.attributes.name)
         this.props.getLocalParks(this.props.city.attributes.name)
     }
 
     getNatParkInfo = () => {
-        const selectedParks = this.props.parks.length > 0 ? this.props.parks.filter(park => park.states === this.props.city.attributes.state) : "nothing"
-        if (selectedParks !== "nothing") {
+        const selectedParks = this.props.parks.length > 0 ? this.props.parks : null
+        if (selectedParks !== null) {
             return selectedParks
         } else {
             return null
@@ -47,8 +47,8 @@ class ParksContainer extends React.Component {
     const mapDispatchToProps = (dispatch) => {
         return (
             {
-                getNationalParks: () => {
-                    dispatch(getNationalParks())
+                getNationalParks: (city) => {
+                    dispatch(getNationalParks(city))
                 },
                 getLocalParks: (city) => {
                     dispatch(getLocalParks(city))
