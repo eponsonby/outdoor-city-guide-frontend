@@ -81,7 +81,7 @@ export const logout = () => {
 
 export const getCurrentUser = () => {
     return dispatch => {
-        return fetch(process.env.REACT_APP_API_URL + '/api/v1/get_current_user', {
+        return fetch(process.env.REACT_APP_API_URL + 'api/v1/get_current_user', {
             method: "GET",
             credentials: "include",
             headers: {
