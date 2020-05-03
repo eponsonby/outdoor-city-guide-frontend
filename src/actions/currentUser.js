@@ -15,16 +15,16 @@ export const clearCurrentUser = () => {
 } 
 
 // async action creators
-export const login = (credentials, history) => {
+export const login = (credentials) => {
     return dispatch => {
         return fetch(process.env.REACT_APP_API_URL + "/api/v1/login", {
-            credentials: "include",
             method: "POST",
-            headers: {
+            headers: { 
                 "Content-Type": "application/json",
                 'Accept': "application/json",
             },
-             body: JSON.stringify(credentials)
+            body: JSON.stringify(credentials),
+            credentials: "include",
         })
         .then(r => r.json())
         .then(user => {
@@ -33,7 +33,6 @@ export const login = (credentials, history) => {
             } else {
                 dispatch(setCurrentUser(user.data))
                 dispatch(getCities())
-                history.push('/')
             }
         })
         .catch(console.log)
@@ -73,7 +72,6 @@ export const signup = (credentials, history) => {
 export const logout = () => {
     return dispatch => {
         dispatch(clearCurrentUser())
-        // dispatch(clearCities())
         return fetch(process.env.REACT_APP_API_URL + '/api/v1/logout', {
             method: "DELETE",
         })
@@ -85,6 +83,7 @@ export const getCurrentUser = () => {
     return dispatch => {
         return fetch(process.env.REACT_APP_API_URL + '/api/v1/get_current_user', {
             method: "GET",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
                 'Accept': "application/json"

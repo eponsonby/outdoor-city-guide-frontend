@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { login } from '../actions/currentUser'
 import Modal from "react-bootstrap/Modal"
+import { withRouter } from "react-router-dom"
 
 
 class Login extends Component {
@@ -106,4 +107,4 @@ class Login extends Component {
     }
 
 
-export default connect(null, mapDispatchToProps)(Login)
+export default withRouter(connect(null, mapDispatchToProps)(Login))

@@ -29,25 +29,6 @@ class ParksNavbar extends Component {
             </div>
             </nav>
             </div>
-
-            // <div className="container">
-            //     <div className="row">
-            //         <div className="col-sm">
-            //             <a className="nav-link" href={`/cities/${this.props.city.id}/parks`}>Parks <span className="sr-only">(current)</span></a>
-            //         </div>
-            //     </div>
-            //     <div className="row">
-            //         <div className="col-sm">
-            //             <a className="nav-link" href={`/cities/${this.props.city.id}/outdoor-stores`}>Outdoor Stores</a>
-            //         </div>
-            //     </div>
-            //     <div className="row">
-            //         <div className="col-sm">
-            //         <a className="nav-link" href={`/cities/${this.props.city.id}/climbing-gyms`}>Climbing Gyms</a>
-            //         </div>
-            //     </div>
-            // </div>
-        )
     }   
 }
 

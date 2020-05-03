@@ -13,21 +13,25 @@ import OutdoorStoresContainer from './components/OutdoorStoresContainer'
 import { Route, Switch, withRouter} from 'react-router-dom'
 
 
+
+
 class App extends React.Component {
   componentDidMount() {
     this.props.getCurrentUser()
     this.props.getCities()
   }
 
+
   render() {
     // const loggedIn = this.props.loggedIn
 
+    
     return (
       <div className="container">
         <Navbar/>
           <Switch>
             <Route exact path='/' component={Cities}/>
-            <Route exact path='/login' component={Login}/>
+            <Route exact path='/login' render={(props) => <Login history={props.history}/>}/>
             <Route exact path='/signup' render={(props) => <Signup history={props.history}/>}/>
             <Route exact path='/cities/:id'
             render={(props) => {
