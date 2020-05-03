@@ -13,7 +13,7 @@ export const loadingCities = () => ({
 
 export const getCities = () => {
     return dispatch => {
-      return fetch(process.env.REACT_APP_API_URL + "/cities", {
+      return fetch(process.env.REACT_APP_API_URL + "cities", {
         method: "GET",
         headers: {
             'Content-Type': "application/json",
