@@ -29,7 +29,7 @@ const getUrls = (data) => {
     let urlsArray = []
     for (let element of data) {
         for (let code of element.codes)
-            urlsArray.push(process.env.REACT_APP_API_URL + `/api/v1/get_parks/?code=${code}`)
+            urlsArray.push(process.env.REACT_APP_API_URL + `api/v1/get_parks/?code=${code}`)
         }
     return urlsArray
 }
