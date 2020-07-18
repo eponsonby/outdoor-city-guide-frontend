@@ -17,7 +17,7 @@ export const clearCurrentUser = () => {
 // async action creators
 export const login = (credentials) => {
     return dispatch => {
-        return fetch(process.env.REACT_APP_API_URL + "/api/v1/login", {
+        return fetch(process.env.REACT_APP_API_URL + "api/v1/login", {
             method: "POST",
             headers: { 
                 "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export const signup = (credentials, history) => {
         const userInfo = {
             user: credentials
         }
-        return fetch(process.env.REACT_APP_API_URL + '/api/v1/signup', {
+        return fetch(process.env.REACT_APP_API_URL + 'api/v1/signup', {
             credentials: "include",
             method: "POST",
             headers: {
@@ -71,7 +71,7 @@ export const signup = (credentials, history) => {
 export const logout = () => {
     return dispatch => {
         dispatch(clearCurrentUser())
-        return fetch(process.env.REACT_APP_API_URL + '/api/v1/logout', {
+        return fetch(process.env.REACT_APP_API_URL + 'api/v1/logout', {
             method: "DELETE",
         })
 
@@ -80,7 +80,7 @@ export const logout = () => {
 
 export const getCurrentUser = () => {
     return dispatch => {
-        return fetch(process.env.REACT_APP_API_URL + '/api/v1/get_current_user', {
+        return fetch(process.env.REACT_APP_API_URL + 'api/v1/get_current_user', {
             method: "GET",
             credentials: "include",
             headers: {
