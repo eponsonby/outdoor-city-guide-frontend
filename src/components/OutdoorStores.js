@@ -32,20 +32,40 @@ class OutdoorStores extends React.Component {
     mapOutdoorStores = () => {
         if (this.props.outdoorStores !== null) {
             let outdoorStores = this.props.outdoorStores.map(outdoorStore =>
-            <div key={outdoorStore.name}>
-            <div className="col mb-4 mt-2">
-                        <div className="card h-150">
-                            <img src={outdoorStore.image_url} height="250" className="card-img-top" alt="..."></img>
-                            <div className="card-body">
-                                <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" rel="noopener noreferrer" href={outdoorStore.url}>{outdoorStore.name}</a></h5>
-                                <p className="card-text number-of-reviews">{this.mapRatingPhotos(outdoorStore.rating)}  {outdoorStore.review_count} reviews</p>
-                                <p className="card-text location">{outdoorStore.location.display_address.map(location => <p>{location}</p>)}</p>
-                                <p className="card-text price">{outdoorStore.price}</p>
-                                <img src="/yelp_logo.png" alt="yelp-logo"></img>
+                <div key={outdoorStore.name + 'container'}>
+                    <div key={outdoorStore.name + 'div'} className="col mb-4 mt-2">
+                        <div key={outdoorStore.name + 'card'} className="card h-150">
+                            <img 
+                            key={outdoorStore.image_url}
+                            src={outdoorStore.image_url}
+                            height="250"
+                            className="card-img-top"
+                            alt="...">
+                            </img>
+                        <div key={outdoorStore.name + 'card-body'} className="card-body">
+                            <h5 key={outdoorStore.name} className="card-title">
+                                <i className="fas fa-external-link-alt link-icon"></i>
+                                    <a
+                                    className="outdoor-store-name text-decoration-none" 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href={outdoorStore.url}>{outdoorStore.name}
+                                    </a>
+                            </h5>
+                            <p key="number-of-reviews" className="card-text number-of-reviews">
+                            {this.mapRatingPhotos(outdoorStore.rating)} {outdoorStore.review_count} reviews
+                            </p>
+                            <div key="location" className="card-text location">
+                            {outdoorStore.location.display_address.map(location => <p key={location}>{location}</p>)}
                             </div>
+                            <p key="price" className="card-text price">{outdoorStore.price}</p>
+                            <img key="yelp-logo" src="/yelp_logo.png" alt="yelp-logo"></img>
                         </div>
-            </div>
-            </div>)
+                        </div>
+                    </div>
+                </div>
+                )
+                
             return outdoorStores
         } else {
             return null
@@ -58,7 +78,7 @@ class OutdoorStores extends React.Component {
             <div>
                 <a className="city-name" href={`/cities/${this.props.city.id}`}>{this.props.city.attributes.name}</a>
                 <br></br><br></br>
-                <a className="back-button" href={`/cities/${this.props.city.id}`}><i class="fas fa-arrow-left"></i> Back</a>
+                <a className="back-button" href={`/cities/${this.props.city.id}`}><i className="fas fa-arrow-left"></i> Back</a>
                 <div className="row row-cols-1 row-cols-md-3">
                     {this.mapOutdoorStores()}
                 </div>
