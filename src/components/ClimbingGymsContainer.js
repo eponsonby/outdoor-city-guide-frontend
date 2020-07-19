@@ -12,7 +12,6 @@ class ClimbingGymsContainer extends React.Component {
     getClimbingGymInfo = () => {
         const climbingGyms = this.props.climbingGyms.data.length > 0 ? this.props.climbingGyms : null   
         if (climbingGyms !== null) {
-            
             return climbingGyms.data
         } else {
             return null
