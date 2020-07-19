@@ -3,7 +3,6 @@ import { getNationalParks } from '../actions/parks'
 import { getLocalParks } from '../actions/localParks'
 import { connect } from 'react-redux'
 import Parks from './Parks'
-// import {Link} from 'react-router-dom'
 
 class ParksContainer extends React.Component {
 

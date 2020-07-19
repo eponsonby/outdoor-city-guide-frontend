@@ -179,8 +179,8 @@ class Parks extends React.Component {
     }
 
     // There was no URL for Sand Mountain in the database, adding it manually
-    SandMountainUrl = () => {
-        if (this.props.localParks && this.props.localParks[2].name === "Sand Mountain Recreation Area") {
+    sandMountainUrl = () => {
+        if (this.props.city.attributes.name === "Reno" && this.props.localParks && this.props.localParks[2].name === "Sand Mountain Recreation Area") {
             this.props.localParks[2].url = "https://www.blm.gov/visit/sand-mountain-recreation-area"
         }
     }
@@ -203,7 +203,7 @@ class Parks extends React.Component {
                     {this.mapNationalParks()}
                     {this.mapLocalParks()}
                     {this.boulderPark()}
-                    {this.blankSandMountainUrl()}
+                    {this.sandMountainUrl()}
                 </div>
             </div>
         )
