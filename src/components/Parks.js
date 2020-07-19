@@ -66,13 +66,25 @@ class Parks extends React.Component {
             let parks = parkData.map(park =>
                 <div key={park.name}>
                 <div className="col mb-4 mt-2">
-                            <div className="card h-150">
-                                <img src={this.mapParkPhotos(park.name)} height="250" className="card-img-top" alt="..."></img>
-                                <div className="card-body">
-                                    <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" rel="noopener noreferrer" href={park.url}>{park.name}</a></h5>
-                                    <p className="card-text">{park.description}</p>
-                                </div>
-                            </div>
+                    <div className="card h-150">
+                        <img
+                        src={this.mapParkPhotos(park.name)}
+                        height="250"
+                        className="card-img-top"
+                        alt="...">
+                        </img>
+                    <div className="card-body">
+                        <h5 className="card-title">
+                            <i className="fas fa-external-link-alt link-icon"></i>
+                                <a className="outdoor-store-name text-decoration-none"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href={park.url}> {park.name}
+                                </a>
+                        </h5>
+                        <p className="card-text">{park.description}</p>
+                    </div>
+                </div>
                 </div>
                 </div>)
             return parks
@@ -83,25 +95,46 @@ class Parks extends React.Component {
 
     // truncate local park descriptions, some of them were very long
     truncateParkDescription = (string, number, url) => {
-    if (string.length <= number) {
-      return string
+        if (string.length <= number) {
+            return string
+        }
+            return <p
+                className="card-text">{string.slice(0, number)}
+                <a
+                className='read-more text-decoration-none'
+                target='_blank'
+                rel="noopener noreferrer"
+                href={url}>...
+                </a>
+            </p>
     }
-    return <p className="card-text">{string.slice(0, number)}<a className='read-more text-decoration-none' target='_blank' rel="noopener noreferrer" href={url}>...</a></p>
-}
  
     // Create a card on the page for each local park
     mapLocalParks = () => {
         if (this.props.localParks !== null) {
-            let parks = this.props.localParks.map(park =>
+            let parks = this.props.localParks.map(park =>      
                 <div key={park.name}>
                 <div className="col mb-4 mt-2">
-                            <div className="card h-150">
-                                <img src={this.mapParkPhotos(park.name)} height="250" className="card-img-top" alt="..."></img>
-                                <div className="card-body">
-                                    <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" rel="noopener noreferrer" href={park.url}>{park.name}</a></h5>
-                                    {this.truncateParkDescription(park.description, 399, park.url)}
-                                </div>
-                            </div>
+                    <div className="card h-150">
+                        <img
+                        src={this.mapParkPhotos(park.name)}
+                        height="250"
+                        className="card-img-top"
+                        alt="..."
+                        ></img>
+                    <div className="card-body">
+                    <h5 className="card-title">
+                        <i className="fas fa-external-link-alt link-icon"></i>
+                        <a
+                        className="outdoor-store-name text-decoration-none"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={park.url}> {park.name}
+                        </a>
+                    </h5>
+                    {this.truncateParkDescription(park.description, 399, park.url)}
+                    </div>
+                    </div>
                 </div>
                 </div>)
             return parks
@@ -117,13 +150,26 @@ class Parks extends React.Component {
             let park =
                 <div key="El Dorado Canyon">
                 <div className="col mb-4 mt-2">
-                            <div className="card h-150">
-                                <img src={this.mapParkPhotos("El Dorado Canyon")} height="250" className="card-img-top" alt="..."></img>
-                                <div className="card-body">
-                                    <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" rel="noopener noreferrer" href="https://cpw.state.co.us/placestogo/Parks/eldoradocanyon">El Dorado Canyon</a></h5>
-                                    <p className="card-text">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Eldorado Canyon is a hidden treasure right in Boulder’s backyard!  Whether it’s hiking amidst the towering sandstone cliffs, picnicking along scenic South Boulder Creek or climbing Eldo's sheer golden walls, Eldorado Canyon State Park truly has something for everyone!  Discover this hidden jewel and take home memories that will last a lifetime.</p>
-                                </div>
-                            </div>
+                    <div className="card h-150">
+                        <img
+                        src={this.mapParkPhotos("El Dorado Canyon")}
+                        height="250"
+                        className="card-img-top"
+                        alt="...">
+                        </img>
+                    <div className="card-body">
+                        <h5 className="card-title">
+                            <i className="fas fa-external-link-alt link-icon"></i>
+                            <a
+                            className="outdoor-store-name text-decoration-none"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://cpw.state.co.us/placestogo/Parks/eldoradocanyon">El Dorado Canyon
+                            </a>
+                        </h5>
+                        <p className="card-text">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Eldorado Canyon is a hidden treasure right in Boulder’s backyard!  Whether it’s hiking amidst the towering sandstone cliffs, picnicking along scenic South Boulder Creek or climbing Eldo's sheer golden walls, Eldorado Canyon State Park truly has something for everyone!  Discover this hidden jewel and take home memories that will last a lifetime.</p>
+                    </div>
+                    </div>
                 </div>
                 </div>
             return park
@@ -132,17 +178,32 @@ class Parks extends React.Component {
         }
     }
 
+    // There was no URL for Sand Mountain in the database, adding it manually
+    SandMountainUrl = () => {
+        if (this.props.localParks && this.props.localParks[2].name === "Sand Mountain Recreation Area") {
+            this.props.localParks[2].url = "https://www.blm.gov/visit/sand-mountain-recreation-area"
+        }
+    }
+
     
     render() {
         return (
             <div>
-                <a className="city-name" href={`/cities/${this.props.city.id}`}>{this.props.city.attributes.name}</a>
+                <a
+                className="city-name"
+                href={`/cities/${this.props.city.id}`}>{this.props.city.attributes.name}
+                </a>
                 <br></br><br></br>
-                <a className="back-button" href={`/cities/${this.props.city.id}`}><i className="fas fa-arrow-left"></i> Back</a>
+                <a
+                className="back-button"
+                href={`/cities/${this.props.city.id}`}>
+                    <i className="fas fa-arrow-left"></i> Back
+                </a>
                 <div className="row row-cols-1 row-cols-md-2">
                     {this.mapNationalParks()}
                     {this.mapLocalParks()}
                     {this.boulderPark()}
+                    {this.blankSandMountainUrl()}
                 </div>
             </div>
         )

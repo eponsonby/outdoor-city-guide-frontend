@@ -66,7 +66,9 @@ const getUrls = (data) => {
                             'Accept': "application/json"
                         }
                     }))
-                    return response.json()
+                    
+                    const result = response.json()
+                    return result
                 })
             )
             dispatch(setLocalParks(parkData))
