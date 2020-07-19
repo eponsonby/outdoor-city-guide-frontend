@@ -49,7 +49,7 @@ class OutdoorStores extends React.Component {
                                     className="outdoor-store-name text-decoration-none" 
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    href={outdoorStore.url}>{outdoorStore.name}
+                                    href={outdoorStore.url}> {outdoorStore.name}
                                     </a>
                             </h5>
                             <p key="number-of-reviews" className="card-text number-of-reviews">
@@ -65,7 +65,7 @@ class OutdoorStores extends React.Component {
                     </div>
                 </div>
                 )
-                
+
             return outdoorStores
         } else {
             return null
