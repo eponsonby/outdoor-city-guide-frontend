@@ -7,11 +7,10 @@ class Logout extends Component {
     render() {
         return (
             <a className="nav-link" href="/" onClick={(event) => {
-                    event.preventDefault()
-                    this.props.logout()
-                    this.props.history.push('/')
-                }
-            }>
+                event.preventDefault()
+                this.props.logout()
+                this.props.history.push('/')
+            }}>
                 Log Out
             </a>
         )

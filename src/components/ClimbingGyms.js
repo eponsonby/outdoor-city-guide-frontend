@@ -34,9 +34,9 @@ class ClimbingGyms extends React.Component {
         if (this.props.climbingGyms !== null) {
             let climbingGyms = this.props.climbingGyms.map(climbingGym =>
             <div key={climbingGym.name}>
-            <div className="col mb-4 mt-2">
-                        <div className="card h-150">
-                            <img src={climbingGym.image_url} height="250" className="card-img-top" alt="..."></img>
+                <div className="col mb-4 mt-2">
+                    <div className="card h-150">
+                        <img src={climbingGym.image_url} height="250" className="card-img-top" alt="..."></img>
                             <div className="card-body">
                                 <h5 className="card-title"><i className="fas fa-external-link-alt link-icon"></i>  <a className="outdoor-store-name text-decoration-none" target="_blank" rel="noopener noreferrer" href={climbingGym.url}>{climbingGym.name}</a></h5>
                                 <p className="card-text number-of-reviews">{this.mapRatingPhotos(climbingGym.rating)}  {climbingGym.review_count} reviews</p>
@@ -44,8 +44,8 @@ class ClimbingGyms extends React.Component {
                                 <p className="card-text price">{climbingGym.price}</p>
                                 <img src="/yelp_logo.png" alt="yelp-logo"></img>
                             </div>
-                        </div>
-            </div>
+                    </div>
+                </div>
             </div>)
             return climbingGyms
         } else {

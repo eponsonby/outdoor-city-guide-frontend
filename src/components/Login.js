@@ -48,36 +48,37 @@ class Login extends Component {
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={(event) => this.handleOnSubmit(event)}>
-                            <div className="form-group">
-                                <div className="input-group input-group-lg">
-                                    <div className="input-group-prepend">
+                        <div className="form-group">
+                            <div className="input-group input-group-lg">
+                                <div className="input-group-prepend">
                                     <span className="input-group-text"><i className="fas fa-user"></i></span>
-                                    </div>
-                                        <input
-                                            className="form-control"
-                                            id="username"
-                                            placeholder="Username"
-                                            value={this.state.username}
-                                            type="text"
-                                            onChange={(event) => this.handleOnChange(event)}
-                                            />
                                 </div>
-                            </div>
-                            <div className="form-group">
-                                <div className="input-group input-group-lg">
-                                    <div className="input-group-prepend">
-                                    <span className="input-group-text"><i className="fas fa-key"></i></span>
-                                    </div>
                                     <input
                                         className="form-control"
-                                        id="password"
-                                        placeholder="Password"
-                                        value={this.state.password}
-                                        type="password"
+                                        id="username"
+                                        placeholder="Username"
+                                        value={this.state.username}
+                                        type="text"
                                         onChange={(event) => this.handleOnChange(event)}
                                     />
                                 </div>
                             </div>
+                            
+                                    <div className="form-group">
+                                        <div className="input-group input-group-lg">
+                                            <div className="input-group-prepend">
+                                                <span className="input-group-text"><i className="fas fa-key"></i></span>
+                                            </div>
+                                            <input
+                                            className="form-control"
+                                            id="password"
+                                            placeholder="Password"
+                                            value={this.state.password}
+                                            type="password"
+                                            onChange={(event) => this.handleOnChange(event)}
+                                            />
+                                        </div>
+                                    </div>
                     </form>
                 </Modal.Body>
                 <Modal.Footer>
