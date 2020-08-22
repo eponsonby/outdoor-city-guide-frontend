@@ -1,29 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
-// import { getCurrentUser } from "./actions/currentUser";
 import { getCities } from "./actions/cities";
-// import Login from "./components/Login";
 import Navbar from "./components/Navbar";
-import Signup from "./components/Signup";
 import Cities from "./components/Cities";
+import Profile from "./components/Profile";
 import ParksContainer from "./components/ParksContainer";
 import ClimbingGymsContainer from "./components/ClimbingGymsContainer";
 import CitiesHomePage from "./components/CitiesHomePage";
 import OutdoorStoresContainer from "./components/OutdoorStoresContainer";
 import { Route, Switch, withRouter } from "react-router-dom";
-import { Security, LoginCallback } from "@okta/okta-react";
+import { Security, LoginCallback, SecureRoute } from "@okta/okta-react";
 
 const config = {
   clientId: "0oaprcjfdUkWFfdyA4x6",
   issuer: "https://dev-803649.okta.com/oauth2/default",
-  redirectUri: "http://localhost:3001/implicit/callback	",
+  redirectUri: "http://localhost:3000/implicit/callback",
   scopes: ["openid", "profile", "email"],
   pkce: true,
 };
 
 class App extends React.Component {
   componentDidMount() {
-    // this.props.getCurrentUser();
     this.props.getCities();
   }
 
@@ -34,17 +31,8 @@ class App extends React.Component {
           <Security {...config}>
             <Navbar />
             <Route exact path="/" component={Cities} />
-            {/* <Route
-              exact
-              path="/login"
-              render={(props) => <Login history={props.history} />}
-            /> */}
+            <SecureRoute exact path="/profile" component={Profile} />
             <Route exact path="/implicit/callback" component={LoginCallback} />
-            <Route
-              exact
-              path="/signup"
-              render={(props) => <Signup history={props.history} />}
-            />
             <Route
               exact
               path="/cities/:id"
@@ -122,7 +110,6 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    loggedIn: !!state.currentUser,
     cities: state.cities,
   };
 };
@@ -132,9 +119,6 @@ const mapDispatchToProps = (dispatch) => {
     getCities: () => {
       dispatch(getCities());
     },
-    // getCurrentUser: () => {
-    //   dispatch(getCurrentUser());
-    // },
   };
 };
 

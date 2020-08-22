@@ -3,10 +3,20 @@ import React, { Component } from "react";
 import Logout from "./Logout";
 import Login from "./Login";
 import Signup from "./Signup";
+import OktaLogout from "./OktaLogout";
 import { withOktaAuth } from "@okta/okta-react";
 
 export default withOktaAuth(
   class Navbar extends Component {
+    constructor(props) {
+      super(props);
+      this.login = this.login.bind(this);
+    }
+
+    async login() {
+      this.props.authService.login("/profile");
+    }
+
     render() {
       return (
         <div className="main-navbar-container">
@@ -64,6 +74,15 @@ export default withOktaAuth(
                       Salt Lake City
                     </a>
                   </div>
+                </li>
+                <li className="nav-item">
+                  {!this.props.authState.isAuthenticated ? (
+                    <a href="#" className="nav-link" onClick={this.login}>
+                      Login with Okta
+                    </a>
+                  ) : (
+                    <OktaLogout />
+                  )}
                 </li>
                 <li className="nav-item">
                   {this.props.authState.isAuthenticated ? (

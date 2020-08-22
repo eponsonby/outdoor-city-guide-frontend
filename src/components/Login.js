@@ -1,21 +1,10 @@
 import React, { Component } from "react";
-// import { connect } from "react-redux";
-// import { login } from "../actions/currentUser";
+import { connect } from "react-redux";
+import { login } from "../actions/currentUser";
 import Modal from "react-bootstrap/Modal";
-// import { withRouter } from "react-router-dom";
-import { withOktaAuth } from "@okta/okta-react";
+import { withRouter } from "react-router-dom";
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.login = this.login.bind(this);
-  }
-
-  async login() {
-    this.props.authService.login("/");
-    console.log(this.props);
-  }
-
   state = {
     username: "",
     password: "",
@@ -34,7 +23,7 @@ class Login extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    // this.props.login(this.state, this.props.history);
+    this.props.login(this.state, this.props.history);
     this.setState({
       username: "",
       password: "",
@@ -98,7 +87,7 @@ class Login extends Component {
             </form>
           </Modal.Body>
           <Modal.Footer>
-            <button className="btn btn-secondary" onClick={this.login}>
+            <button className="btn btn-secondary" onClick={this.handleOnSubmit}>
               Login
             </button>
             <button className="btn btn-secondary" onClick={this.handleClose}>
@@ -111,17 +100,17 @@ class Login extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     setCurrentUser: (user) => {
-//       dispatch({
-//         type: "SET_CURRENT_USER",
-//         user: user,
-//       });
-//     },
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCurrentUser: (user) => {
+      dispatch({
+        type: "SET_CURRENT_USER",
+        user: user,
+      });
+    },
 
-//     login: (credentials, history) => dispatch(login(credentials, history)),
-//   };
-// };
+    login: (credentials, history) => dispatch(login(credentials, history)),
+  };
+};
 
-export default withOktaAuth(Login);
+export default withRouter(connect(null, mapDispatchToProps)(Login));
