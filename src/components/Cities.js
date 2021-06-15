@@ -27,17 +27,19 @@ class Cities extends React.Component {
       return [];
     } else {
       return this.props.cities.data.map((city) => (
-        <div className="col mb-4">
-          <div className="card h-150 text-center">
-            <img
-              src={this.mapCityImages(city.attributes.name)}
-              className="card-img-top"
-              alt="..."
-            ></img>
-            <div className="card-body">
-              <h5 className="card-title card-city-name">
-                <a href={`/cities/${city.id}`}>{city.attributes.name}</a>
-              </h5>
+        <div key={city.id}>
+          <div className="col mb-4">
+            <div className="card h-150 text-center">
+              <img
+                src={this.mapCityImages(city.attributes.name)}
+                className="card-img-top"
+                alt="..."
+              ></img>
+              <div className="card-body">
+                <h5 className="card-title card-city-name">
+                  <a href={`/cities/${city.id}`}>{city.attributes.name}</a>
+                </h5>
+              </div>
             </div>
           </div>
         </div>

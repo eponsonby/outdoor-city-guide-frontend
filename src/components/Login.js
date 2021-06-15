@@ -40,9 +40,9 @@ class Login extends Component {
     return (
       // Login modal
       <>
-        <a href="#" className="nav-link" onClick={this.handleShow}>
+        <span className="nav-link" onClick={this.handleShow}>
           Login
-        </a>
+        </span>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header>
             <Modal.Title>Hello! Sign in to your account here.</Modal.Title>

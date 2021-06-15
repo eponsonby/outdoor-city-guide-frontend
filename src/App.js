@@ -46,7 +46,7 @@ class App extends React.Component {
                 return city !== null ? (
                   <CitiesHomePage city={city} />
                 ) : (
-                  <p>Error</p>
+                  <p>Loading...</p>
                 );
               }}
             />
@@ -63,7 +63,7 @@ class App extends React.Component {
                 return city !== null ? (
                   <ParksContainer city={city} />
                 ) : (
-                  <p>Error</p>
+                  <p>Loading...</p>
                 );
               }}
             />
@@ -80,7 +80,7 @@ class App extends React.Component {
                 return city !== null ? (
                   <ClimbingGymsContainer city={city} />
                 ) : (
-                  <p>Error</p>
+                  <p>Loading...</p>
                 );
               }}
             />
@@ -97,7 +97,7 @@ class App extends React.Component {
                 return city !== null ? (
                   <OutdoorStoresContainer city={city} />
                 ) : (
-                  <p>Error</p>
+                  <p>Loading...</p>
                 );
               }}
             />
