@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -16,12 +16,12 @@ code {
   font-size: 15px;
 }
 
-.cities-header, .cities-welcome-text {
+.cities-header,
+.cities-welcome-text {
   text-align: center;
 }
 
-
-.cities-row{
+.cities-row {
   margin-top: 25px;
 }
 
@@ -42,7 +42,7 @@ code {
   transform: translate(-50%, -50%);
 }
 
-.centered-text a{
+.centered-text a {
   font-size: 35px;
   text-decoration: none;
   font-weight: bold;
@@ -56,28 +56,29 @@ code {
   color: black;
 }
 
-.park-name:hover{
+.park-name:hover {
   color: grey;
 }
 
-.park-name:visited{
+.park-name:visited {
   color: black;
 }
 
-.city-name, .cities-header, .card-city-name {
+.city-name,
+.cities-header,
+.card-city-name {
   font-family: "Pacifico", cursive;
   font-size: 30px;
 }
 
-.card-city-name, .cities-header {
+.card-city-name,
+.cities-header {
   font-size: 33px;
 }
 
 .city-name {
   padding-top: 20px;
 }
-
-
 
 .lead {
   text-align: center;
@@ -89,8 +90,8 @@ code {
 } */
 
 .btn-primary {
-  background-color: #008CBA !important;
-  border: 1px solid #008CBA !important;
+  background-color: #008cba !important;
+  border: 1px solid #008cba !important;
 }
 
 .card-deck {
@@ -99,20 +100,23 @@ code {
 
 /* dropdown menu item color when clicked */
 .dropdown .dropdown-menu .dropdown-item:active {
-  background-color: #008CBA !important;
+  background-color: #008cba !important;
   color: white !important;
 }
 
-a:hover {
-  color: #008CBA;
+a:hover,
+span {
+  color: #008cba;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a {
   color: black;
 }
 
-.location, .price {
+.location,
+.price {
   line-height: 5px;
   padding-top: 10px;
 }
@@ -122,8 +126,9 @@ a {
   color: gray;
 }
 
-.outdoor-store-name, .read-more {
-  color: #008CBA;
+.outdoor-store-name,
+.read-more {
+  color: #008cba;
 }
 
 .read-more {

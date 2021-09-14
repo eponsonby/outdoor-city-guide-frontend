@@ -13,7 +13,6 @@ async function checkUser() {
 export default withOktaAuth(
   class Profile extends Component {
     _isMounted = false;
-
     constructor(props) {
       super(props);
       this.state = { userInfo: null };
