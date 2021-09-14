@@ -3,10 +3,8 @@ import React, { Component } from "react";
 import Logout from "./Logout";
 import Login from "./Login";
 import Signup from "./Signup";
-import OktaLogout from "./OktaLogout";
-import { withOktaAuth } from "@okta/okta-react";
 
-export default withOktaAuth(
+export default
   class Navbar extends Component {
     constructor(props) {
       super(props);
@@ -75,16 +73,7 @@ export default withOktaAuth(
                     </a>
                   </div>
                 </li>
-                <li className="nav-item">
-                  {!this.props.authState.isAuthenticated ? (
-                    <a href="#" className="nav-link" onClick={this.login}>
-                      Login with Okta
-                    </a>
-                  ) : (
-                    <OktaLogout />
-                  )}
-                </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   {this.props.authState.isAuthenticated ? (
                     <Logout />
                   ) : (
@@ -93,7 +82,7 @@ export default withOktaAuth(
                 </li>
                 <li className="nav-item">
                   {this.props.authState.isAuthenticated ? null : <Signup />}
-                </li>
+                </li> */}
               </ul>
             </div>
           </nav>
@@ -101,7 +90,6 @@ export default withOktaAuth(
       );
     }
   }
-);
 
 // const mapStateToProps = (state) => {
 //   return {

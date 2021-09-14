@@ -9,15 +9,7 @@ import ClimbingGymsContainer from "./components/ClimbingGymsContainer";
 import CitiesHomePage from "./components/CitiesHomePage";
 import OutdoorStoresContainer from "./components/OutdoorStoresContainer";
 import { Route, Switch, withRouter } from "react-router-dom";
-import { Security, LoginCallback, SecureRoute } from "@okta/okta-react";
 
-const config = {
-  clientId: "0oaprcjfdUkWFfdyA4x6",
-  issuer: "https://dev-803649.okta.com/oauth2/default",
-  redirectUri: "http://localhost:3000/implicit/callback",
-  scopes: ["openid", "profile", "email"],
-  pkce: true,
-};
 
 class App extends React.Component {
   componentDidMount() {
@@ -27,12 +19,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <Switch>
-          <Security {...config}>
             <Navbar />
             <Route exact path="/" component={Cities} />
-            <SecureRoute exact path="/profile" component={Profile} />
-            <Route exact path="/implicit/callback" component={LoginCallback} />
+            <Route exact path="/profile" component={Profile} />
             <Route
               exact
               path="/cities/:id"
@@ -101,8 +90,6 @@ class App extends React.Component {
                 );
               }}
             />
-          </Security>
-        </Switch>
       </div>
     );
   }
