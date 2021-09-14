@@ -8,7 +8,7 @@ import ParksContainer from "./components/ParksContainer";
 import ClimbingGymsContainer from "./components/ClimbingGymsContainer";
 import CitiesHomePage from "./components/CitiesHomePage";
 import OutdoorStoresContainer from "./components/OutdoorStoresContainer";
-import { Route, Switch, withRouter } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 
 
 class App extends React.Component {
