@@ -1,6 +1,9 @@
 {
   "name": "outdoor-city-guide-frontend",
   "version": "0.1.0",
+  "engines": {
+    "node": "16.x"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -19,8 +22,7 @@
     "react-scripts": "3.4.0",
     "react-spinners": "^0.8.1",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0",
-    "node": "16.14.0"
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
